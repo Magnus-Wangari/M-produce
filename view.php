@@ -1,6 +1,5 @@
 <?php
-require('config.php');
-
+include 'includes/db.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,8 +33,8 @@ require('config.php');
 <?php
 $count=1;
 $sel_query="Select firstname, em, pass, dat, time, dep from book";
-$result = mysqli_query($db,$sel_query);
-while($row =$result-> fetch_assoc()) { ?>
+$result = mysqli_query($conn, $sel_query);
+while($row = mysqli_fetch_assoc($result)) { ?>
 <tr><td align="center"><?php echo $count; ?></td>
 <td align="center"><?php echo $row["firstname"]; ?></td>
 <td align="center"><?php echo $row["em"]; ?></td>
