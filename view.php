@@ -32,7 +32,7 @@ include 'includes/db.inc.php';
 <tbody>
 <?php
 $count=1;
-$sel_query="Select firstname, em, pass, dat, time, dep from book";
+$sel_query="SELECT firstname, em, pass, dat, time, dep from book";
 $result = mysqli_query($conn, $sel_query);
 while($row = mysqli_fetch_assoc($result)) { ?>
 <tr><td align="center"><?php echo $count; ?></td>

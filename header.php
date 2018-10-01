@@ -22,7 +22,9 @@ session_start();
 					<?php
 						if(isset($_SESSION['username'])){
 							echo'<form action = "includes/logout.inc.php" method="POST">
-								<button type ="submit" name= "submit">Logout</button></form>';
+									<button type ="submit" name = "submit">Logout</button>
+									<button type = "submit" name = "notification" >Notification</button>
+								</form>';
 						}else{
 							echo'<a href = "forgot.php">Forgot password</a>
 								<a href ="signup.php">Sign up</a>
