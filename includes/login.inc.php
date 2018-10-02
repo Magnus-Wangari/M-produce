@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
 					$_SESSION['password'] = $row['password'];
 					$_SESSION['county'] = $row['county'];
 					$_SESSION['category'] = $row['category'];
-					header("Location: ../index.php?login=success");
+					header("Location: ../userprofile.php?login=success");
 					exit();
 				}
 			}
