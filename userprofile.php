@@ -135,7 +135,7 @@
     </div>
     <ul>
         <li>
-            <p><b><a href="logoutad.php">Logout</a></b></p>
+            <p><b><a href="includes/logout.inc.php">Logout</a></b></p>
         </li>
         <li>
             <p><b><a href="http://www.agricultureauthority.go.ke/category/prices/">News Feeds</a></b></p>
@@ -157,13 +157,13 @@
 
         <?php
 //check for a form submission
- require('config.php');
+ include 'includes/db.inc.php';
    session_start();
 if(isset($_GET['email'])){
     
 $count=1;
-$sel_query="Select firstname, lastname, dob, gender, email, telephone, category, county from useracc";
-$result = mysqli_query($db,$sel_query);
+$sel_query="SELECT * FROM users";
+$result = mysqli_query($conn,$sel_query);
     
 while($row =$result-> fetch_assoc()) { ?>
 
@@ -180,7 +180,7 @@ while($row =$result-> fetch_assoc()) { ?>
             <button> <a href="edit.php?firstname=<?php echo $row["firstname"]; ?>">Post Produce</a></button>
 
             <div id=avatar>
-                <img src="generatedtext.jpg">
+                <img src="image/generatedtext.jpg">
 
             </div>
 

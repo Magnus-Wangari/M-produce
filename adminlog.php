@@ -1,6 +1,7 @@
  <?php
  
-   inlcude('config.php');
+   include 'includes/db.inc.php';
+
    session_start();
   if($_SERVER["REQUEST_METHOD"]=="POST"){
     //username and password sent from form  
@@ -21,7 +22,7 @@
         
           $_SESSION['login_user']=$myfirst_name;
           
-          header("location:dash.php");
+          header("Location:dash.php");
             echo  "". $myfirst_name. "";
       }else {
           $error="Your Login name or password is incorrect";
@@ -40,7 +41,7 @@
     <body>
 
         <div class="loginbox">
-            <img src="f2.png" class="avatar"> 
+            <img src="image/f2.png" class="avatar"> 
             <h1 style="color:black">M-Produce Admin</h1>
             <form action="" method="post">
                 <p>Username </p>

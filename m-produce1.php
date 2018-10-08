@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include 'includes/db.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include("config.php");
 <style>
     #example0 {
 
-        background: url(short.jpg);
+        background: url(image/short.jpg);
         width: 192px;
         height: 260px;
         top:65%;
@@ -33,7 +33,7 @@ include("config.php");
     
     #example1 {
 
-        background: url(gen6.jpg);
+        background: url(image/gen6.jpg);
         width: 1420px;
         height: 140px;
         background-repeat: no-repeat;
@@ -51,7 +51,7 @@ include("config.php");
         height: 90px;
         top: 40%;
         left: 50%;
-        background: url(generatedtext.jpg);
+        background: url(image/generatedtext.jpg);
         background-repeat: no-repeat;
         align-content: center;
 
@@ -67,7 +67,7 @@ include("config.php");
         box-shadow: 30px 30px 30px black;
         width: 320px;
         height: 320px;
-        background-image: url(pr9.jpg);
+        background-image: url(image/pr9.jpg);
         background-repeat: no-repeat;
         background-color: honeydew;
         align-content: center;
@@ -93,7 +93,7 @@ include("config.php");
         box-shadow: 30px 30px 30px black;
         width: 320px;
         height: 320px;
-        background-image: url(p11.jpg);
+        background-image: url(image/p11.jpg);
         background-repeat:no-repeat;
         align-content: center;
         top: 81%;
@@ -119,7 +119,7 @@ include("config.php");
         width: 1250px;
         height: 620px;
         background-color: gainsboro;
-        background: url(pe.jpg);
+        background: url(image/pe.jpg);
         background-repeat: no-repeat;
         position: absolute;
         top: 99%;
@@ -140,7 +140,7 @@ include("config.php");
         width: 380px;
         height:200px;
         background-color: honeydew;
-        background-image: url(pr7.jpg);
+        background-image: url(image/pr7.jpg);
         background-repeat: no-repeat;
         align-content: center;
         top: 138%;
@@ -162,7 +162,7 @@ include("config.php");
         box-shadow: 30px 30px 30px black;
         width: 380px;
         height: 200px;
-        background-image: url(pr3.jpg);
+        background-image: url(image/pr3.jpg);
         background-repeat:no-repeat;
         align-content: center;
         top: 138%;
@@ -184,7 +184,7 @@ include("config.php");
         box-shadow: 30px 30px 30px black;
         width: 380px;
         height: 200px;
-        background-image: url(per6.jpg);
+        background-image: url(image/per6.jpg);
         background-repeat:no-repeat;
         align-content: center;
         top: 138%;
@@ -306,10 +306,10 @@ include("config.php");
     
         
         <ul><li>
-                <p><b><a href="logoutad.php">Login</a></b></p>
+                <p><b><a href="includes/login.inc.php">Login</a></b></p>
             </li>
             <li>
-                <p><b><a href="ins.php">Sign-Up</a></b></p>
+                <p><b><a href="signup.php">Sign-Up</a></b></p>
             </li>
             <!--
             <li>

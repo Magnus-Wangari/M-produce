@@ -1,7 +1,6 @@
 <?php
-require('config.php ');
 
-
+include 'includes/db.inc.php';
 
 if(isset($_POST['new']) && $_POST['new']==1){
     $name = $_REQUEST['firstname'];

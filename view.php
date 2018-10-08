@@ -13,7 +13,7 @@ include 'includes/db.inc.php';
     <div class=box style="padding:10px">
 <p><a href="dash.php">Dashboard</a> 
 | <a href="ins.php">Insert New Record</a> 
-| <a href="logoutad.php">Logout</a></p>
+| <a href="includes/logout.inc.php">Logout</a></p>
     </div>
 <h1 style="text-align:center;color:dodgerblue">View Records</h1>
     <br>
