@@ -233,7 +233,7 @@ include 'includes/db.inc.php';
     
        
         <ul><li>
-                <p><b><a href="logoutad.php">Logout</a></b></p>
+                <p><b><a href="logout.inc.php">Logout</a></b></p>
             </li>
             <li>
                 <p><b><a href="ins.php">Insert New Order</a></b></p>
@@ -250,7 +250,7 @@ include 'includes/db.inc.php';
             
         </ul>
 
-    </div>
+    </div> 
 
   <!--  <div id=example3>
        <h4> M-Produce</h4>
