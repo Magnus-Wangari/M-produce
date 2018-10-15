@@ -13,7 +13,7 @@ include 'includes/db.inc.php';
     <div class=box style="padding:10px">
 <p><a href="dash.php">Dashboard</a> 
 | <a href="ins.php">Insert New Record</a> 
-| <a href="logoutad.php">Logout</a></p>
+| <a href="includes/logout.inc.php">Logout</a></p>
     </div>
 <h1 style="text-align:center;color:dodgerblue">View Records</h1>
     <br>
@@ -32,7 +32,7 @@ include 'includes/db.inc.php';
 <tbody>
 <?php
 $count=1;
-$sel_query="Select firstname, em, pass, dat, time, dep from book";
+$sel_query="SELECT firstname, em, pass, dat, time, dep from book";
 $result = mysqli_query($conn, $sel_query);
 while($row = mysqli_fetch_assoc($result)) { ?>
 <tr><td align="center"><?php echo $count; ?></td>

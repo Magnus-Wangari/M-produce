@@ -1,6 +1,7 @@
 <?php
 
-include("config.php");
+include 'includes/db.inc.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ include("config.php");
 <style>
     #example0 {
 
-        background: url(short.jpg);
+        background: url(image/short.jpg);
         width: 192px;
         height: 260px;
         top:65%;
@@ -33,7 +34,7 @@ include("config.php");
     
     #example1 {
 
-        background: url(gen6.jpg);
+        background: url(image/gen6.jpg);
         width: 1420px;
         height: 140px;
         background-repeat: no-repeat;
@@ -51,7 +52,7 @@ include("config.php");
         height: 90px;
         top: 40%;
         left: 50%;
-        background: url(generatedtext.jpg);
+        background: url(image/generatedtext.jpg);
         background-repeat: no-repeat;
         align-content: center;
 
@@ -84,7 +85,7 @@ include("config.php");
         box-shadow: 30px 30px 30px black;
         width: 220px;
         height: 220px;
-        background-image: url(per6.jpg);
+        background-image: url(image/per6.jpg);
         background-repeat:no-repeat;
         align-content: center;
         top: 176%;
@@ -116,7 +117,7 @@ include("config.php");
         width: 1250px;
         height: 620px;
         background-color: gainsboro;
-        background: url(pr4.jpg);
+        background: url(image/pr4.jpg);
         background-repeat: no-repeat;
         position: absolute;
         top: 99%;
@@ -232,7 +233,7 @@ include("config.php");
     
        
         <ul><li>
-                <p><b><a href="logoutad.php">Logout</a></b></p>
+                <p><b><a href="logout.inc.php">Logout</a></b></p>
             </li>
             <li>
                 <p><b><a href="ins.php">Insert New Order</a></b></p>
@@ -249,7 +250,7 @@ include("config.php");
             
         </ul>
 
-    </div>
+    </div> 
 
   <!--  <div id=example3>
        <h4> M-Produce</h4>

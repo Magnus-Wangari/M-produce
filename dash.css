@@ -1,0 +1,20 @@
+#example1 {
+    border: 1px solid black;
+    background:url(image/pr1.jpg);
+    background-size: 100px 80px;
+    background-repeat: no-repeat;
+    padding:15px;
+}
+
+#example2 {
+    border: 1px solid black;
+    background:url(image/img_flwr.gif);
+    background-repeat: no-repeat;
+    padding:15px;
+}
+header{
+    background-image: url(image/pr1.jpg)
+}
+h2{
+    font-family:serif;
+}
