@@ -26,8 +26,6 @@ include("config.php");
         transform: translate(-50%, -50%);
         box-sizing: border-box;
         padding: 70px 30px;
-        
-
 
     }
     
@@ -328,13 +326,13 @@ include("config.php");
     </div>
 
     <div id=example3>
-       <h4> M-Produce</h4>
+       <h3>Fesh Produce From Local Farmers</h3>
     </div>
     <div id=example4>
-        <h4>From Farmers Based In Your Location</h4>
+        <h4>M-Produce</h4>
     </div>
     <div id=example5>
-        <h4> Order Your Produce Today</h4>
+        <h3> Order Your Produce Today</h3>
          
     </div>
     
