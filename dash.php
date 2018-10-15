@@ -1,7 +1,6 @@
-<?php
+ <?php
 
-include 'includes/db.inc.php';
-
+include("config.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +15,7 @@ include 'includes/db.inc.php';
 <style>
     #example0 {
 
-        background: url(image/short.jpg);
+        background: url(short.jpg);
         width: 192px;
         height: 260px;
         top:65%;
@@ -34,7 +33,7 @@ include 'includes/db.inc.php';
     
     #example1 {
 
-        background: url(image/gen6.jpg);
+        background: url(gen6.jpg);
         width: 1420px;
         height: 140px;
         background-repeat: no-repeat;
@@ -52,7 +51,7 @@ include 'includes/db.inc.php';
         height: 90px;
         top: 40%;
         left: 50%;
-        background: url(image/generatedtext.jpg);
+        background: url(generatedtext.jpg);
         background-repeat: no-repeat;
         align-content: center;
 
@@ -85,7 +84,7 @@ include 'includes/db.inc.php';
         box-shadow: 30px 30px 30px black;
         width: 220px;
         height: 220px;
-        background-image: url(image/per6.jpg);
+        background-image: url(per6.jpg);
         background-repeat:no-repeat;
         align-content: center;
         top: 176%;
@@ -116,7 +115,7 @@ include 'includes/db.inc.php';
         width: 1250px;
         height: 620px;
         background-color: gainsboro;
-        background: url(image/pr4.jpg);
+        background: url(pr4.jpg);
         background-repeat: no-repeat;
         position: absolute;
         top: 99%;
@@ -196,7 +195,7 @@ include 'includes/db.inc.php';
     }
     #example8:hover {
     opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
+    filter: alpha(opacity=100);
 }
     h2 {
         
@@ -232,7 +231,7 @@ include 'includes/db.inc.php';
     
        
         <ul><li>
-                <p><b><a href="logout.inc.php">Logout</a></b></p>
+                <p><b><a href="logoutad.php">Logout</a></b></p>
             </li>
             <li>
                 <p><b><a href="ins.php">Insert New Order</a></b></p>
@@ -249,7 +248,7 @@ include 'includes/db.inc.php';
             
         </ul>
 
-    </div> 
+    </div>
 
   <!--  <div id=example3>
        <h4> M-Produce</h4>
