@@ -4,10 +4,16 @@
 
 	<section class = "main-container">
 		<div class = "main-wrapper"></div>
-		<div class="example1"></div>
+		<div class="farm">
+			<img src="image/gen6.jpg" alt="descrip">
+		</div>
 		<div class="main-body">
-			<div class="example0"></div>
-			<div class="example2"></div>
+			<div class="mpro">
+				<img src="image/generatedtext.jpg" alt="name">
+			</div>
+			<div class="m-p">
+				<img src="image/short.jpg" alg="logo">
+			</div>
 			
 			<?php
 
