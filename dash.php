@@ -113,7 +113,6 @@ include 'includes/db.inc.php';
     }
 
     #example6 {
-
         width: 1250px;
         height: 620px;
         background-color: gainsboro;
