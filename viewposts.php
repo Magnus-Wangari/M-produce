@@ -7,7 +7,7 @@ require('config.php');
 
 <head>
     <meta charset="utf-8">
-    <title>View Records</title>
+    <title>View Posts</title>
     <link rel="stylesheet" href="" />
 </head>
 <style>
@@ -105,65 +105,59 @@ table {
         <img src=generatedtext.jpg style=width:300px>
         </div>
 
-        <h1 style="text-align:center;color:forestgreen">USER ACCOUNTS</h1>
+        <h1 style="text-align:center;color:forestgreen">POSTS</h1>
         <br>
         <table width="100%" border="1" style="border-collapse:collapse;">
             <thead>
                 <tr>
                     <th><strong>No</strong></th>
-                    <th><strong>First Name</strong></th>
-                    <th><strong>Last Name</strong></th>
-                    <th><strong>Date of Birth</strong></th>
-                    <th><strong>Gender</strong></th>
+                      <th><strong>postid</strong></th>
                     <th><strong>Email</strong></th>
-                    <th><strong>Telephone</strong></th>
-                    <th><strong>Category</strong></th>
-                    <th><strong>County</strong></th>
-                    <th><strong>Password</strong></th>
+                    <th><strong>Product Name</strong></th>
+                    <th><strong>Price</strong></th>
+                    <th><strong>Image</strong></th>
+                    <th><strong>Quantity</strong></th>
+                     <th><strong>Date and Time</strong></th>
                 </tr>
             </thead>
             <tbody>
                 <?php
 $count=1;
-$sel_query="Select * from useracc";
+$sel_query="Select * from post";
 $result = mysqli_query($db,$sel_query);
 while($row =$result-> fetch_assoc()) { ?>
                     <tr>
                         <td align="center">
                             <?php echo $count; ?>
                         </td>
+                        
                         <td align="center">
-                            <?php echo $row["firstname"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["lastname"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["dob"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["gender"]; ?>
+                            <?php echo $row["postid"]; ?>
                         </td>
                         <td align="center">
                             <?php echo $row["email"]; ?>
                         </td>
                         <td align="center">
-                            <?php echo $row["telephone"]; ?>
+                            <?php echo $row["productname"]; ?>
                         </td>
                         <td align="center">
-                            <?php echo $row["category"]; ?>
+                           Ksh <?php echo $row["price"]; ?>
                         </td>
                         <td align="center">
-                            <?php echo $row["county"]; ?>
+                      <?php echo $row["image"]; ?>
                         </td>
                         <td align="center">
-                            <?php echo $row["password"]; ?>
+                            <?php echo $row["quantity"]; ?>KG
                         </td>
+                        <td align="center">
+                            <?php echo $row["date"]; ?>
+                        </td>
+                        
                         <td align="center">
                             <a href="adminedit.php?email=<?php echo $row["email"]; ?>"><img src=edit2.jpg style=width:30px;></a>
                         </td>
                         <td align="center">
-                            <a href="delete.php?email=<?php echo $row["email"]; ?>"><img src=delete.png style=width:30px;></a>
+                            <a href="deletepost.php?postid=<?php echo $row["postid"]; ?>"><img src=delete.png style=width:30px;></a>
                         </td>
                     </tr>
                     <?php $count++; } ?>

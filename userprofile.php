@@ -1,4 +1,4 @@
-<html>
+  <html>
 
 <head>
 
@@ -10,7 +10,9 @@
     @import url('https://fonts.googleis.com/css?family=Pacifico|Rock+Salt');
     html,
     body,
-    section {}
+    section {
+        
+    }
 
     table {
         border-collapse: collapse;
@@ -28,10 +30,11 @@
     }
 
     tr:nth-child(even) {
-        background-color:lightgreen;
+        background-color:palegreen;
         opacity:0.5;
 
     }
+     tr:hover {background-color:lightgreen;}
 
     body {}
 
@@ -58,10 +61,10 @@
 
     ul {
         list-style-type: none;
-        padding: 0;
+        padding: 10px;
         margin: 0;
         background-color:green;
-        border-radius: 50px;
+        border-radius: 10px;
 
         overflow: hidden;
 
@@ -100,11 +103,11 @@
         color:limegreen;
     }
 
-    button {
+    button {  
         text-align:center;
         background-color:green;
 
-        width: 12%;
+        width: 15%;
         padding: 5px 5px;
         margin: 0px 0;
         display: inline-block;
@@ -135,7 +138,7 @@
     </div>
     <ul>
         <li>
-            <p><b><a href="includes/logout.inc.php">Logout</a></b></p>
+            <p><b><a href="logoutad.php">Logout</a></b></p>
         </li>
         <li>
             <p><b><a href="http://www.agricultureauthority.go.ke/category/prices/">News Feeds</a></b></p>
@@ -145,7 +148,7 @@
         <li>
             <p><b><a href="view.php">Notifications</a></b></li>
         <li>
-            <p><b><a href="view.php">View Posts</a></b></li>
+            <p><b><a href="posts.php">View Posts</a></b></li>
 
 
 
@@ -157,30 +160,32 @@
 
         <?php
 //check for a form submission
- include 'includes/db.inc.php';
-   session_start();
-if(isset($_GET['email'])){
+require('config.php');
+#include('session.php');
+  
+if(isset($_POST['email'])){
     
 $count=1;
-$sel_query="SELECT * FROM users";
-$result = mysqli_query($conn,$sel_query);
+//$sel_query = "SELECT * from useracc where 'email'='".$_SESSION['email']."'"or die(mysql_error());
+$sel_query="Select firstname, lastname, dob, gender, email, telephone, category, county from useracc";
+$result = mysqli_query($db,$sel_query);
     
 while($row =$result-> fetch_assoc()) { ?>
 
 
             <h2>
                 <?php echo $row["firstname"]; ?>
-                <?php echo $row["lastname"]; ?>'s profile</h2><br/>
+               <?php echo $row["lastname"]; ?>'s profile</h2><br/> 
             <p>
-                <?php echo $row["category"];?>
+                Category:<?php echo $row["category"];?>
             </p>
         
-            <button> <a href="edit.php?firstname=<?php echo $row["firstname"]; ?>">Edit Profile</a></button>
+            <button> <a href="edit.php?email=<?php echo $row["email"]; ?>">Edit Profile</a></button>
         
-            <button> <a href="edit.php?firstname=<?php echo $row["firstname"]; ?>">Post Produce</a></button>
+            <button> <a href="uploadpost.php?email=<?php echo $row["email"]; ?>">Post Produce</a></button>
 
             <div id=avatar>
-                <img src="image/generatedtext.jpg">
+                <img src="generatedtext.jpg">
 
             </div>
 
