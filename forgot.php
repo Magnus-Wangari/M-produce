@@ -47,7 +47,7 @@ if(isset($_POST['reset'])){
 	$username = $_POST['username'];
 	$email = $_POST['email'];
 
-	$sql = "SELECT* FROM users WHERE username = '$username'";
+	$sql = "SELECT* FROM useracc WHERE username = '$username'";
 	$query = mysqli_query($conn, $sql);
 	$numrow = mysqli_num_rows($query);
 
@@ -63,7 +63,7 @@ if(isset($_POST['reset'])){
 			header("Location: forgot.php?forgot=invalidemail");
 			$msg = "Invalid email";
 			echo "<script type='text/javascript'>
-			window.location.href='../index.php';
+			window.location.href='index.php';
 			alert('$msg');
 			</script>";
 			exit();
@@ -80,7 +80,7 @@ if(isset($_POST['reset'])){
 
 			$header = "FROM: mproduceproject@gmail.com"; 
 
-			$sql = "UPDATE users SET passreset = '$code' WHERE username ='$username'";
+			$sql = "UPDATE useracc SET passreset = '$code' WHERE username ='$username'";
 
 			mysqli_query($conn, $sql);
 

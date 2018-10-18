@@ -138,7 +138,7 @@
     </div>
     <ul>
         <li>
-            <p><b><a href="logoutad.php">Logout</a></b></p>
+            <p><b><a href="includes/logout.inc.php">Logout</a></b></p>
         </li>
         <li>
             <p><b><a href="http://www.agricultureauthority.go.ke/category/prices/">News Feeds</a></b></p>
