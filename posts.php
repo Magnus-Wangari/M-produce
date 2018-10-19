@@ -78,13 +78,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </ul>
             </div>
-            <div class="product_list_header">
+           <!-- <div class="product_list_header">
                 <form action="#" method="post" class="last">
                     <input type="hidden" name="cmd" value="_cart">
                     <input type="hidden" name="display" value="1">
                     <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
                 </form>
-            </div>
+            </div>-->
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -213,7 +213,7 @@ while($row =$result-> fetch_assoc()) { ?>
                                                         </h5>
 <span></span></h4>
                                                 </div>
-                                                <div class="snipcart-details top_brand_home_details">
+                                             <!--  <div class="snipcart-details top_brand_home_details">
                                                     <form action="#" method="post">
                                                         <fieldset>
                                                             <input type="hidden" name="cmd" value="_cart">
@@ -228,7 +228,8 @@ while($row =$result-> fetch_assoc()) { ?>
                                                             <input type="submit" name="submit" value="Add to cart" class="button">
                                                         </fieldset>
                                                     </form>
-                                                </div>
+                                                </div>-->
+                                                
                                             </div>
                                         </figure>
                                     </div>
