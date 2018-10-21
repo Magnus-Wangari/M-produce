@@ -226,7 +226,7 @@ while($row =$result-> fetch_assoc()) { ?>
                                                             <input type="hidden" name="item_name" value="<?php echo $row["productname"];?>">
                                                             <input type="hidden" name="amount" value="<?php echo $row["price"]; ?>">
                                                           
-                                                            <input type="hidden" name="currency_code" value="USD">
+                                                            <input type="hidden" name="currency_code" value="KES">
                                                             <input type="hidden" name="return" value=" ">
                                                             <input type="hidden" name="cancel_return" value=" ">
                                                             <input type="submit" name="submit" value="Add to cart" class="button">
