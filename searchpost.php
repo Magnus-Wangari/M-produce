@@ -61,8 +61,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        ?>
                     <!--<a href="products.html">SHOP NOW</a></p>-->
             </div>
-            <div class="agile-login">
-                <ul>
+            <div class="agile-login" >
+                <ul >
 
                     <li>  
                         <p><b><a href="http://www.agricultureauthority.go.ke/category/prices/">News Feeds</a></b></p>
@@ -218,14 +218,14 @@ while($row =$result-> fetch_assoc()) { ?>
 <span></span></h4>
                                                 </div>
                                                 <div class="snipcart-details top_brand_home_details">
-                                                    <form action="#" method="post">
+                                                    <form action="shopping-cart-form" method="post">
                                                         <fieldset>
-                                                            <input type="hidden" name="cmd" value="_cart">
-                                                            <input type="hidden" name="add" value="1">
+                                                             <input type="hidden" name="cmd" value="_cart">
+                                                            <input type="hidden" name="add" value="1kg">
                                                             <input type="hidden" name="business" value=" ">
-                                                            <input type="hidden" name="item_name" value="Fortune Sunflower Oil">
-                                                            <input type="hidden" name="amount" value="35.99">
-                                                            <input type="hidden" name="discount_amount" value="1.00">
+                                                            <input type="hidden" name="item_name" value="<?php echo $row["productname"];?>">
+                                                            <input type="hidden" name="amount" value="<?php echo $row["price"]; ?>">
+                                                          
                                                             <input type="hidden" name="currency_code" value="USD">
                                                             <input type="hidden" name="return" value=" ">
                                                             <input type="hidden" name="cancel_return" value=" ">

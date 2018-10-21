@@ -17,8 +17,6 @@ include_once 'header.php';
 		</form>
 	</div>
 </section>
-
 <?php
-
 include_once 'footer.php';
 ?>

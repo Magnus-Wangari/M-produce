@@ -1,7 +1,7 @@
 <?php
 require('config.php');
-$email=$_REQUEST['email']; 
-$query = "DELETE FROM post WHERE email='".$email."'"; 
+$postid=$_REQUEST['postid']; 
+$query = "DELETE FROM post WHERE postid='".$postid."'"; 
 $result = mysqli_query($db,$query) or die ( mysqli_error($db));
-header("Location: view.php"); 
+header("Location: viewposts.php"); 
 ?>
