@@ -103,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="w3l_search">
                 <form action="searchpost.php" method="post">
-                    <input type="text" name="productname" placeholder="Search for a Product..." required="">
+                    <input type="search" name="productname" placeholder="Search for a Product..." required="">
                     <button type="submit" class="btn btn-default search" aria-label="Left Align">
 					<i class="fa fa-search" aria-hidden="true"> </i>
 				</button>
