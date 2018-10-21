@@ -3,7 +3,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "mproduce";
+$dbname = "cs project";
 
 // Create connection
 $conn = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);

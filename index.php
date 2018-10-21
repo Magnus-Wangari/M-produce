@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<!--<<<<<<< HEAD-->
 <?php
 	include_once 'header.php';
 ?>
@@ -36,9 +36,8 @@
 <?php
 	include_once 'footer.php';
 ?>
-=======
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
     <title>User Profile</title>
@@ -70,3 +69,5 @@
 
 </html>
 >>>>>>> f0a4b5f17d130291e88015ff7e52792ada46261d
+-->
+

@@ -304,7 +304,7 @@ include 'includes/db.inc.php';
     
         
         <ul><li>
-                <p><b><a href="includes/login.inc.php">Login</a></b></p>
+                <p><b><a href="login.php">Login</a></b></p>
             </li>
             <li>
                 <p><b><a href="signup.php">Sign-Up</a></b></p>

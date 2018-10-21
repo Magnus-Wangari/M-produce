@@ -7,15 +7,17 @@ if(isset($_POST['submit'])){
 	$first = mysqli_real_escape_string($conn, $_POST['first']);
 	$last = mysqli_real_escape_string($conn, $_POST['last']);
 	$username = mysqli_real_escape_string($conn, $_POST['username']);
+	$dob = mysqli_real_escape_string($conn, $_POST['dob']);
+	$gender = mysqli_real_escape_string($conn, $_POST['gender']);
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
-	$phoneNumber = mysqli_real_escape_string($conn, $_POST['phoneNumber']);
+	$phone = mysqli_real_escape_string($conn, $_POST['phone']);
 	$password = mysqli_real_escape_string($conn, $_POST['password']);
 	$county = mysqli_real_escape_string($conn, $_POST['county']);
 	$category = mysqli_real_escape_string($conn, $_POST['category']);
 
 	//Error handlers
 	//Check for empty fields
-	if(empty($first)|| empty($last) || empty($username)|| empty($email)|| empty($phoneNumber)|| empty($password) || empty($county) || empty($category)){
+	if(empty($first)|| empty($last) || empty($username)|| empty($dob) || empty($gender) ||empty($email)|| empty($phone)|| empty($password) || empty($county) || empty($category)){
 		header("Location: ../signup.php?signup=empty");
 		exit();
 	}else{
@@ -31,7 +33,7 @@ if(isset($_POST['submit'])){
 					exit();
 				}else{
 					//Check username has not been repeted
-					$sql = "SELECT * FROM users WHERE username = '$username'";
+					$sql = "SELECT * FROM useracc WHERE username = '$username'";
 					$result = mysqli_query($conn, $sql);
 					$resultCheck = mysqli_num_rows($result);
 					
@@ -42,7 +44,7 @@ if(isset($_POST['submit'])){
 						//hashing the password
 						$hashedpassword = password_hash($password, PASSWORD_DEFAULT);
 						//Insert the user into the database
-						$sql = "INSERT INTO users(first_name, last_name, username, email, phoneNumber, password, county, category) VALUES ('$first', '$last', '$username', '$email', '$phoneNumber', '$hashedpassword', '$county', '$category');";
+						$sql = "INSERT INTO useracc (firstname, lastname, username, dob, gender, email, telephone, password, county, category) VALUES ('$first', '$last', '$username', '$dob', '$gender', '$email', '$phone', '$hashedpassword', '$county', '$category')";
 						mysqli_query($conn, $sql);
 						header("Location: ../index.php?signup=success");
 						exit();

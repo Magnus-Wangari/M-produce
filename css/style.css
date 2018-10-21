@@ -67,7 +67,7 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 	-ms-transition: .5s ease-in;
 }
 .agileits_header {
-    background: #333333;
+    background: gray;
     padding: 12px 0;
 }
 .w3l_offers {
@@ -279,7 +279,12 @@ ul.multi-column-dropdown h6 {
     width: 100%;
 }
 .navigation-agileits {
-    background:limegreen;
+    background-color:lightgreen;
+   font-family: fantasy;
+    padding:0px 12px;
+    text-align:center;
+    font-size:3rem;
+    color: mediumseagreen;
 }
 .navbar-nav > li {
     float: left;
@@ -1226,7 +1231,7 @@ td.invert-image a img {
 	text-decoration:none;
 }
 .checkout-right-basket a:hover{
-	background:#fe9126;
+	background: limegreen;
 }
 .checkout-right-basket a span {
     left: -.5em;

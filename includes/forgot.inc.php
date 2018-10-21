@@ -1,13 +1,12 @@
 <?php
 
 include 'db.inc.php';
-include '../forgot.php';
 
 if(isset($_GET['code'])){
 	$get_username = $_GET['username'];
 	$get_code = $_GET['code'];
 
-	$sql ="SELECT * FROM users WHERE username='$get_username' ";
+	$sql ="SELECT * FROM useracc WHERE username='$get_username'";
 	$query = mysqli_query($conn, $sql);
 
 	while($row =  mysqli_fetch_assoc($query)){
@@ -30,15 +29,11 @@ if(isset($_GET['code'])){
 				<nav>
 					<div class = "main-wrapper">
 						<ul>
-							<li><a href="index.php"><h2>HOME</h2></a></li>
+							<li><a href="../index.php"><h2>HOME</h2></a></li>
 						</ul>
 						<div class = "nav-login">
-							<a href ="signup.php">Sign up</a>
-							<form action="includes/login.inc.php" method="POST">
-								<input type ="text" name="username" placeholder = "Username/Email"/>
-								<input type ="password" name = "password" placeholder = "Password"/>
-								<button type ="submit" name = "submit">Login</button>
-							</form>
+							<a href ="../signup.php">Sign up</a>
+							<a href ="../login.php">Login</a>
 
 						</div>
 					</div>
@@ -51,7 +46,7 @@ if(isset($_GET['code'])){
 					<form class= "signup-form" action="passreset.inc.php?code=$get_code" method="POST">
 						<input type = "password" name = "password" placeholder="New Password" required />
 						<input type = "password" name = "password1" placeholder = "Confirm Password" required />
-						<inpu type="hidden" name="username" value="$db_username" />
+						<input type="hidden" name="username" value="$db_username" />
 						<button type = "submit" value="Submit" name ="reset">Reset</button> 
 					</form>
 				</div>

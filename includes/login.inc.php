@@ -9,15 +9,15 @@ if(isset($_POST['submit'])){
 	//Error handlers
 	//Check if inputs are empty
 	if(empty($username)|| empty($password)){
-		header("Location: ../index.php?login=empty");
+		header("Location: ../login.php?login=empty");
 		exit();
 	}else{
          
-		$sql = "SELECT * FROM users WHERE username = '$username' OR email = '$username'";
+		$sql = "SELECT * FROM useracc WHERE username = '$username' OR email = '$username'";
 		$result = mysqli_query($conn, $sql);
 		$resultCheck = mysqli_num_rows($result);
 		if($resultCheck < 1){
-			header("Location: ../index.php?login=error");
+			header("Location: ../login.php?login=error");
 			exit();
 		}else{
 			if($row = mysqli_fetch_assoc($result)){
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 				
 				if($hashedpasswordCheck == false){
 				
-				header("Location: ../index.php?login=wrongpassword");
+				header("Location: ../login.php?login=wrongpassword");
 				exit();
 
 				}elseif($hashedpasswordCheck == true){
@@ -34,18 +34,20 @@ if(isset($_POST['submit'])){
 					$_SESSION['first'] = $row['first_name'];
 					$_SESSION['last'] = $row['last_name'];
 					$_SESSION['username'] = $row['username'];
+					$_SESSION['dob'] = $row['dob'];
+					$_SESSION['gender'] = $row['gender'];
 					$_SESSION['email'] = $row['email'];
-					$_SESSION['phoneNumber'] = $row['phoneNumber'];
+					$_SESSION['phone'] = $row['telephone'];
 					$_SESSION['password'] = $row['password'];
 					$_SESSION['county'] = $row['county'];
 					$_SESSION['category'] = $row['category'];
-					header("Location: ../index.php?login=success");
+					header("Location: ../userprofile.php?login=success");
 					exit();
 				}
 			}								
 		}
 	}
 }else{
-	header("Location: ../index.php?login=error");
+	header("Location: ../login.php?login=error");
 	exit();
 }

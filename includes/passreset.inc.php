@@ -15,7 +15,7 @@ if(isset($_POST['reset'])){
 	}else{
 		$hashedpassword = password_hash($password, PASSWORD_DEFAULT);
 
-		$sql ="UPDATE users SET password = '$hashedpassword', passreset = '0' WHERE username='$post_username'";
+		$sql ="UPDATE useracc SET password = '$hashedpassword', passreset = '0' WHERE username='$post_username'";
 		$query = mysqli_query($conn, $sql);
 
 		$msg = "Password Changed";
@@ -28,11 +28,11 @@ if(isset($_POST['reset'])){
 
 	header("Location: ../forgot.php?forgot=error");
 	
-	$msg="Match the Passwords";
+	/*$msg="Match the Passwords";
 	echo "
 	<script type='text/javascript'>
 	 alert('$msg');
-	</script>";
+	</script>";*/
 	exit();
 }
 
