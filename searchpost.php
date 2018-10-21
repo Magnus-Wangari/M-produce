@@ -103,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="w3l_search">
                 <form action="searchpost.php" method="post">
-                    <input type="search" name="Search" placeholder="Search for a Product..." required="">
+                    <input type="text" name="productname" placeholder="Search for a Product..." required="">
                     <button type="submit" class="btn btn-default search" aria-label="Left Align">
 					<i class="fa fa-search" aria-hidden="true"> </i>
 				</button>
@@ -148,7 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--- groceries --->
     <div class="products">
         <div class="container">
-            <div class="col-md-4 products-left">
+         <!--   <div class="col-md-4 products-left">
                 <div class="categories">
                     <h2>Categories</h2>
                     <ul class="cate">
@@ -175,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                    
                     </ul>
                 </div>
-            </div>
+            </div>-->
             <div class="col-md-8 products-right">
                 
                 </div>
@@ -183,10 +183,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 <div class="agile_top_brands_grids">
                      <?php
+                     $productname = $_POST['productname'];
                     if(isset($_POST['productname'])){
                             $sel_query="Select * from post where productname='$productname'";
+                       
 $result = mysqli_query($db,$sel_query);
-    
+                   
 while($row =$result-> fetch_assoc()) { ?>
  
                     <div class="col-md-4 top_brand_left">
@@ -241,6 +243,7 @@ while($row =$result-> fetch_assoc()) { ?>
                      <?php
                             }
                     }
+                    
                              ?>
                     
                  

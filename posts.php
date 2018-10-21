@@ -117,6 +117,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- navigation -->
     <div class="navigation-agileits">
         <p>Fresh Farm Produce From Farmers Near You </p>
+        
         <div class="container">
             <nav class="navbar navbar-default">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -146,8 +147,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
     <!--- groceries --->
     <div class="products">
+         <img src="short.jpg"style=width:100px>
         <div class="container">
-            <div class="col-md-4 products-left">
+            
+       <!--     <div class="col-md-4 products-left">
                 <div class="categories">
                     <h2>Categories</h2>
                     <ul class="cate">
@@ -174,7 +177,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                    
                     </ul>
                 </div>
-            </div>
+            </div>-->
             <div class="col-md-8 products-right">
                 
                 </div>
@@ -213,7 +216,7 @@ while($row =$result-> fetch_assoc()) { ?>
                                                         </h5>
 <span></span></h4>
                                                 </div>
-                                             <!--  <div class="snipcart-details top_brand_home_details">
+                                              <div class="snipcart-details top_brand_home_details">
                                                     <form action="#" method="post">
                                                         <fieldset>
                                                             <input type="hidden" name="cmd" value="_cart">
@@ -228,7 +231,7 @@ while($row =$result-> fetch_assoc()) { ?>
                                                             <input type="submit" name="submit" value="Add to cart" class="button">
                                                         </fieldset>
                                                     </form>
-                                                </div>-->
+                                                </div>
                                                 
                                             </div>
                                         </figure>
