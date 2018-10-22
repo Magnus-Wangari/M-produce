@@ -1,23 +1,25 @@
 <?php
 session_start();
+include('session.php');
+include('config.php');
 
 if(isset($_POST['submit'])){
     
-	include 'db.inc.php';
-	$username = mysqli_real_escape_string($conn, $_POST['username']);
-	$password = mysqli_real_escape_string($conn, $_POST['password']);
+	
+	$username = mysqli_real_escape_string($db, $_POST['username']);
+	$password = mysqli_real_escape_string($db, $_POST['password']);
 	//Error handlers
 	//Check if inputs are empty
 	if(empty($username)|| empty($password)){
-		header("Location: ../index.php?login=empty");
+		header("Location:header.php?login=empty");
 		exit();
 	}else{
          
-		$sql = "SELECT * FROM users WHERE username = '$username' OR email = '$username'";
-		$result = mysqli_query($conn, $sql);
+		$sql = "SELECT * FROM useracc WHERE username = '$username' OR email = '$email'";
+		$result = mysqli_query($db, $sql);
 		$resultCheck = mysqli_num_rows($result);
 		if($resultCheck < 1){
-			header("Location: ../index.php?login=error");
+			header("Location:login.php?login=error");
 			exit();
 		}else{
 			if($row = mysqli_fetch_assoc($result)){
@@ -26,26 +28,27 @@ if(isset($_POST['submit'])){
 				
 				if($hashedpasswordCheck == false){
 				
-				header("Location: ../index.php?login=wrongpassword");
+				header("Location:header.php?login=wrongpassword");
 				exit();
 
 				}elseif($hashedpasswordCheck == true){
 					//Log in  the user here
-					$_SESSION['first'] = $row['first_name'];
-					$_SESSION['last'] = $row['last_name'];
+					$_SESSION['first'] = $row['firstname'];
+					$_SESSION['last'] = $row['lastname'];
 					$_SESSION['username'] = $row['username'];
 					$_SESSION['email'] = $row['email'];
-					$_SESSION['phoneNumber'] = $row['phoneNumber'];
-					$_SESSION['password'] = $row['password'];
+					$_SESSION['phoneNumber'] = $row['telephone'];
 					$_SESSION['county'] = $row['county'];
 					$_SESSION['category'] = $row['category'];
-					header("Location: ../index.php?login=success");
+                    $_SESSION['password'] = $row['password'];
+                    
+					header("Location:posts.php?login=success");
 					exit();
 				}
 			}								
 		}
 	}
 }else{
-	header("Location: ../index.php?login=error");
+	header("Location:login.php?login=error");
 	exit();
 }

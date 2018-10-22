@@ -1,7 +1,7 @@
 
 <?php
    require('config.php');
-  # include('session.php');
+   include('session.php');
    session_start();
 if(isset($_POST['upload'])){
  $email=$_SESSION['email'];

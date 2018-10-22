@@ -1,6 +1,6 @@
 <?php
 
-include 'includes/db.inc.php';
+include ('config.php');
 
 if(!isset($_GET['code'])){
 echo'
@@ -17,7 +17,7 @@ echo'
 		<nav>
 			<div class = "main-wrapper">
 				<ul>
-					<li><a href="index.php"><h2>HOME</h2></a></li>
+					<li><a href="header.php"><h2>HOME</h2></a></li>
 				</ul>
 				<div class = "nav-login">
 					<a href = "signup.php">Sign up</a>
@@ -48,7 +48,7 @@ if(isset($_POST['reset'])){
 	$email = $_POST['email'];
 
 	$sql = "SELECT* FROM useracc WHERE username = '$username'";
-	$query = mysqli_query($conn, $sql);
+	$query = mysqli_query($db, $sql);
 	$numrow = mysqli_num_rows($query);
 
 	if($numrow = 0){
@@ -63,7 +63,7 @@ if(isset($_POST['reset'])){
 			header("Location: forgot.php?forgot=invalidemail");
 			$msg = "Invalid email";
 			echo "<script type='text/javascript'>
-			window.location.href='index.php';
+			window.location.href='header.php';
 			alert('$msg');
 			</script>";
 			exit();

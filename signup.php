@@ -1,10 +1,26 @@
 <?php
-	include_once 'header.php';
+	include('config.php');
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>sign up</title>
+    <link href=forms.css rel="stylesheet" type="text/css">
+    </head>
 
-	<section class = "main-container">
-		<div class = "main-wrapper">
-			<h2>Signup</h2>
+</html>
+
+	<section class = "xop-container">
+		<div class = "xop-left">
+            <article>
+            <h1>M-produce</h1>
+            </article>
+            
+        </div>
+        <div class=xop-right>
+		<article>
+            <h1>Signup</h1>
+            </article>	
 			<form class= "signup-form" action="includes/signup.inc.php" method="POST">
 				<input type = "text" name = "first" placeholder="Firstname" required />
 				<input type = "text" name = "last" placeholder="Lastname" required />
@@ -75,7 +91,7 @@
 					<option value="Supplier">Supplier</option>
 					<option value="Both">Both</option>
 				</select>
-				<button type = "submit" name ="submit">Sign up</button> 
+			<P>	<input type = "submit" name ="submit" value="Sign Up"> </P>
 			</form>
 		</div>
 	</section>

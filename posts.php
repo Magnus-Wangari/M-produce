@@ -1,6 +1,6 @@
 <?php
 require("config.php"); 
-#include('session.php');
+include('session.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <p><b><a href="view.php"></a></b></li>
                     <li>
-                        <p><b><a href="logoutad.php">Logout</a></b></p>
+                        <p><b><a href="logout.inc.php">Logout</a></b></p>
                     </li>
                     <li>
                         <!-- <p><b><a href="posts.php">View Posts</a></b></li>-->

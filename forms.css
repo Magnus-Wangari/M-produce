@@ -1,0 +1,126 @@
+
+    @import url('https://fonts.googleis.com/css?family=Pacifico|Rock+Salt');
+    html,
+    body,
+    section {
+        height: 116% ;
+
+    }
+
+    body {
+        color: #fff;
+        text-align: center;
+    }
+
+    .xop-container {
+        display: flex;
+        
+    }
+ 
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .xop-left {
+        background: linear-gradient(rgba(0,0,0,0.85), rgba(255,255,255,0.10)), url(pr4.jpg);
+        background-size: cover;
+        flex: 1;
+        padding: 1rem;
+        transition: all .2s ease-in-out;
+        box-shadow: 10px 10px grey;
+
+    }
+
+    .xop-right {
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(164, 222, 102, 0.10)), url();
+        background-size: cover;
+        flex: 1;
+        padding: 1rem;
+        transition: all.2s ease-in-out;
+        box-shadow: 10px 10px grey;
+        
+    }
+
+    .xop-left:hover,
+    .xop-right:hover {
+        transform: scale(0.95);
+
+    }
+
+    .xop-left h1 {
+        font-family: 'Rock Salt', cursive;
+        font-size: 6rem;
+    }
+
+    .xop-right h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 4rem;
+        color:white;
+    }
+
+    .xop-button {
+        border-radius: 30px;
+        color: #fff;
+        background-color: #fcad26;
+        padding: 1.5%;
+        margin: 0.2%;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 150px;
+    }
+
+    .xop-button:hover {
+        background-color: #fcc567;
+
+    }
+    .loginbox{
+         font-size: 22px;
+        color:ghostwhite;
+        
+    }
+input{
+    width: 100%;
+    padding: 17px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid limegreen;
+    box-sizing: border-box;
+    border-radius:30px;
+}
+input[type=submit]{
+    width:20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius:50px;
+    color:white;
+    background-color:forestgreen;
+    font-size:20px;
+}
+a{
+    list-style-type: none;
+    text-decoration: none;
+    color:grey;
+}
+a:hover{
+    color:forestgreen;
+}
+select{
+     width: 50%;
+    padding: 17px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid limegreen;
+    box-sizing: border-box;
+    border-radius:10px;
+}
+
