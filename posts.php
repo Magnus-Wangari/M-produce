@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 require("config.php"); 
 #include('session.php');
+=======
+session_start();
+require("config.php");
+>>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
 ?>
 <!DOCTYPE html>
 <html>
@@ -98,7 +103,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </div>
             <div class="w3ls_logo_products_left">
+<<<<<<< HEAD
                   
+=======
+                <h1><a href="index.php"><img src=generatedtext.jpg style=width:100%></a></h1>
+>>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
             </div>
             <div class="w3l_search">
                 <form action="searchpost.php" method="post">
@@ -149,7 +158,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
     <!--- groceries --->
     <div class="products">
+<<<<<<< HEAD
          <img src="gen6.jpg"style=width:1000px>
+=======
+         <img src="short.jpg" style=width:100px>
+>>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
         <div class="container">
             
        <!--     <div class="col-md-4 products-left">
@@ -219,7 +232,7 @@ while($row =$result-> fetch_assoc()) { ?>
 <span></span></h4>
                                                 </div>
                                               <div class="snipcart-details top_brand_home_details">
-                                                    <form action="shopping-cart-form" method="post">
+                                                    <form action="shopping-cart-form.php" method="post">
                                                         <fieldset>
                                                             <input type="hidden" name="cmd" value="_cart">
                                                             <input type="hidden" name="add" value="1">
@@ -303,10 +316,10 @@ while($row =$result-> fetch_assoc()) { ?>
                 <div class="col-md-3 w3_footer_grid">
                     <h3>Profile</h3>
                     <ul class="info">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Store</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">My Cart</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Login</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Create Account</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="posts.php">Store</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.php">My Cart</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.php">Login</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="signup.php">Create Account</a></li>
                     </ul>
 
 
@@ -370,7 +383,8 @@ while($row =$result-> fetch_assoc()) { ?>
             action: '#'
         });
 
-        if (~window.location.search.indexOf('reset=true')) {
+        if (!~window.location.search.indexOf('reset=true')) {
+        } else {
             paypal.minicart.reset();
         }
 

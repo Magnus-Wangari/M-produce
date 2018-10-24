@@ -17,7 +17,7 @@ echo'
 		<nav>
 			<div class = "main-wrapper">
 				<ul>
-					<li><a href="header.php"><h2>HOME</h2></a></li>
+					<li><a href="index.php"><h2>HOME</h2></a></li>
 				</ul>
 				<div class = "nav-login">
 					<a href = "signup.php">Sign up</a>
@@ -63,7 +63,7 @@ if(isset($_POST['reset'])){
 			header("Location: forgot.php?forgot=invalidemail");
 			$msg = "Invalid email";
 			echo "<script type='text/javascript'>
-			window.location.href='header.php';
+			window.location.href='index.php';
 			alert('$msg');
 			</script>";
 			exit();

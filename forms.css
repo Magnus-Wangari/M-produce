@@ -34,7 +34,7 @@
     }
 
     .xop-right {
-        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(164, 222, 102, 0.10)), url();
+        background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(164, 222, 102, 0.10));
         background-size: cover;
         flex: 1;
         padding: 1rem;

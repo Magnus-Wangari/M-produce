@@ -1,5 +1,5 @@
 ﻿<?php
-
+session_start();
 include 'includes/db.inc.php';
 
 ?>
@@ -112,23 +112,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- checkout -->
 	<div class="checkout">
 		<div class="container">
-			<h2>Your shopping cart contains: <span>3 Products</span></h2>
 			<div class="checkout-right">
 				<table class="timetable_sub">
 					<thead>
 						<tr>
-							<th>SL No.</th>	
-							<th>Product</th>
-							<th>Quality</th>
 							<th>Product Name</th>
-						
+							<th>Quantity</th>
+							<th>Product Price</th>
 							<th>Price</th>
 							<th>Remove</th>
 						</tr>
 					</thead>
 					<tr class="rem1">
-						<td class="invert">1</td>
-						<td class="invert-image"><a href="single.html"><img src="images/1.png" alt=" " class="img-responsive" /></a></td>
+                        <td class="invert"><?php
+                            $product_name['']
+                            ?></td>
 						<td class="invert">
 							 <div class="quantity"> 
 								<div class="quantity-select">                           
