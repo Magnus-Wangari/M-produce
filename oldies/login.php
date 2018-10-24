@@ -16,7 +16,7 @@
       
       $count=mysqli_num_rows($result);
       
-      //if result matched first name an d password, tbale row must be one row
+      //if result matched first name and password, table row must be one row
       
       if($count==1){
          $email=$_SESSION['email'];

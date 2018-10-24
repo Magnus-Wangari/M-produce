@@ -3,7 +3,7 @@ require('config.php');
 
 $email=$_REQUEST['email'];
 $query = "SELECT * from useracc where email='".$email."'"; 
-$result = mysqli_query($db, $query) or die ( mysqli_error());
+$result = mysqli_query($db, $query) or die ( mysqli_error($db));
 $row = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>

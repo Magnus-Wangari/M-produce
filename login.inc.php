@@ -1,34 +1,33 @@
 <?php
 session_start();
-include('session.php');
-include('config.php');
 
 if(isset($_POST['submit'])){
-    
+
+	include 'includes/db.inc.php';
 	
-	$username = mysqli_real_escape_string($db, $_POST['username']);
-	$password = mysqli_real_escape_string($db, $_POST['password']);
+	$username = mysqli_real_escape_string($conn, $_POST['username']);
+	$password = mysqli_real_escape_string($conn, $_POST['password']);
 	//Error handlers
 	//Check if inputs are empty
 	if(empty($username)|| empty($password)){
-		header("Location:header.php?login=empty");
+		header("Location:login.php?login=empty");
 		exit();
 	}else{
          
-		$sql = "SELECT * FROM useracc WHERE username = '$username' OR email = '$email'";
-		$result = mysqli_query($db, $sql);
+		$sql = "SELECT * FROM useracc WHERE username = '$username' OR email = '$email' ";
+		$result = mysqli_query($conn, $sql);
 		$resultCheck = mysqli_num_rows($result);
 		if($resultCheck < 1){
 			header("Location:login.php?login=error");
 			exit();
 		}else{
 			if($row = mysqli_fetch_assoc($result)){
-				//dehashing the password
+				//de-hashing the password
 				$hashedpasswordCheck = password_verify($password, $row['password']);
 				
 				if($hashedpasswordCheck == false){
 				
-				header("Location:header.php?login=wrongpassword");
+				header("Location:index.php?login=wrongpassword");
 				exit();
 
 				}elseif($hashedpasswordCheck == true){
@@ -36,11 +35,13 @@ if(isset($_POST['submit'])){
 					$_SESSION['first'] = $row['firstname'];
 					$_SESSION['last'] = $row['lastname'];
 					$_SESSION['username'] = $row['username'];
+					$_SESSION['dob'] = $row['dob'];
+					$_SESSION['gender'] = $row['gender'];
 					$_SESSION['email'] = $row['email'];
-					$_SESSION['phoneNumber'] = $row['telephone'];
+					$_SESSION['phone'] = $row['telephone'];
+					$_SESSION['password'] = $row['password'];
 					$_SESSION['county'] = $row['county'];
 					$_SESSION['category'] = $row['category'];
-                    $_SESSION['password'] = $row['password'];
                     
 					header("Location:posts.php?login=success");
 					exit();

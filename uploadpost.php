@@ -1,7 +1,7 @@
 
 <?php
+session_start();
    require('config.php');
-   include('session.php');
    session_start();
 if(isset($_POST['upload'])){
  $email=$_SESSION['email'];
@@ -58,9 +58,8 @@ header('Location:posts.php');
     font-size:18px;
     width:10%;
     color:white;
-    border:solid;
-    border-color:transparent;
-    border-radius:50px;
+                border: solid transparent;
+                border-radius:50px;
    
 }
  input[type=file] {
@@ -71,16 +70,14 @@ header('Location:posts.php');
     font-size:18px;
     width:20%;
     color:black;
-    border:solid;
-    border-color:transparent;
-    border-radius:50px;
+     border: solid transparent;
+     border-radius:50px;
 }
 input[type=text] {
     padding:10px;
     margin:8px;
     width:35%;
-    border:solid;
-    border-color:limegreen;
+    border: solid limegreen;
     border-radius:50px;
     opacity:0.6;
 }
@@ -88,13 +85,13 @@ input[type=text] {
     padding:10px;
     margin:8px;
     width:35%;
-    border:solid;
-    border-color:limegreen;
-    border-radius:50px;
+                border: solid limegreen;
+                border-radius:50px;
     opacity:0.6;
     
 }
 
+/*
 #img-upload{
     width: 100%;
 }
@@ -104,9 +101,9 @@ input[type=text] {
         padding: 0px;
         align-self: center;
         justify-content: center;
-
     }        
-            
+*/
+
             
         </style>
     </head>
@@ -133,15 +130,15 @@ input[type=text] {
                     <div>
   	  <input type="file" name="filetoupload">
   	</div>
-                     <p>  <input type=email id="email"  name="email" placeholder="email">
-                   <p> <input type=text id="productname"  name="productname" placeholder="Product Name">
-                    <p>   <input type=text id="price"  name="price" placeholder="Price per Kg">
+                     <p><input type=email id="email"  name="email" placeholder="email">
+                   <p><input type=text id="productname"  name="productname" placeholder="Product Name">
+                    <p><input type=text id="price"  name="price" placeholder="Price per Kg">
                    <p>  <input type=text id="quantity"  name="quantity" placeholder="Quantity Available">
                         <p>  <input type=text id="county"  name="county" placeholder="county">
                        
                    
                     <div>
-                        <button type="submit" name="upload"class="btn-file">POST</button>
+                        <button type="submit" name="upload" class="btn-file">POST</button>
                     
                         
                     </div>

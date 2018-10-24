@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_POST['submit'])){
-    
+
 	include 'db.inc.php';
 	$username = mysqli_real_escape_string($conn, $_POST['username']);
 	$password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -17,18 +17,16 @@ if(isset($_POST['submit'])){
 		$result = mysqli_query($conn, $sql);
 		$resultCheck = mysqli_num_rows($result);
 		if($resultCheck < 1){
-			header("Location: ../login.php?login=error");
+            header("Location: ../login.php?login=error");
 			exit();
 		}else{
 			if($row = mysqli_fetch_assoc($result)){
-				//dehashing the password
+				//De-hashing the password
 				$hashedpasswordCheck = password_verify($password, $row['password']);
 				
 				if($hashedpasswordCheck == false){
-				
-				header("Location: ../login.php?login=wrongpassword");
-				exit();
-
+				    header("Location: ../login.php?login=wrongpassword");
+				    exit();
 				}elseif($hashedpasswordCheck == true){
 					//Log in  the user here
 					$_SESSION['first'] = $row['first_name'];
@@ -41,13 +39,13 @@ if(isset($_POST['submit'])){
 					$_SESSION['password'] = $row['password'];
 					$_SESSION['county'] = $row['county'];
 					$_SESSION['category'] = $row['category'];
-					header("Location: ../userprofile.php?login=success");
+					header("Location: ../posts.php?login=success");
 					exit();
 				}
 			}								
 		}
 	}
 }else{
-	header("Location: ../login.php?login=error");
+	header("Location: ../index.php?login=error");
 	exit();
 }

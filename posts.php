@@ -1,6 +1,6 @@
 <?php
-require("config.php"); 
-include('session.php');
+session_start();
+require("config.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -98,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </div>
             <div class="w3ls_logo_products_left">
-                <h1><a href="index.html"><img src=generatedtext.jpg style=width:100%></a></h1>
+                <h1><a href="index.php"><img src=generatedtext.jpg style=width:100%></a></h1>
             </div>
             <div class="w3l_search">
                 <form action="searchpost.php" method="post">
@@ -148,7 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
     <!--- groceries --->
     <div class="products">
-         <img src="short.jpg"style=width:100px>
+         <img src="short.jpg" style=width:100px>
         <div class="container">
             
        <!--     <div class="col-md-4 products-left">
@@ -218,7 +218,7 @@ while($row =$result-> fetch_assoc()) { ?>
 <span></span></h4>
                                                 </div>
                                               <div class="snipcart-details top_brand_home_details">
-                                                    <form action="shopping-cart-form" method="post">
+                                                    <form action="shopping-cart-form.php" method="post">
                                                         <fieldset>
                                                             <input type="hidden" name="cmd" value="_cart">
                                                             <input type="hidden" name="add" value="1">
@@ -302,10 +302,10 @@ while($row =$result-> fetch_assoc()) { ?>
                 <div class="col-md-3 w3_footer_grid">
                     <h3>Profile</h3>
                     <ul class="info">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Store</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">My Cart</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Login</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Create Account</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="posts.php">Store</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.php">My Cart</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.php">Login</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="signup.php">Create Account</a></li>
                     </ul>
 
 
@@ -369,7 +369,8 @@ while($row =$result-> fetch_assoc()) { ?>
             action: '#'
         });
 
-        if (~window.location.search.indexOf('reset=true')) {
+        if (!~window.location.search.indexOf('reset=true')) {
+        } else {
             paypal.minicart.reset();
         }
 
