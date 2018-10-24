@@ -2,7 +2,7 @@
 
 if(isset($_POST['submit'])){
 
-	include_once'db.inc.php';
+	include_once 'db.inc.php';
 
 	$first = mysqli_real_escape_string($conn, $_POST['first']);
 	$last = mysqli_real_escape_string($conn, $_POST['last']);
@@ -33,20 +33,20 @@ if(isset($_POST['submit'])){
 					exit();
 				}else{
 					//Check username has not been repeted
-					$sql = "SELECT * FROM useracc WHERE username = '$username'";
+					$sql = "SELECT * FROM `useracc` WHERE username= = '$username'";
 					$result = mysqli_query($conn, $sql);
 					$resultCheck = mysqli_num_rows($result);
 					
 					if($resultCheck > 0){
-						header("Location: ../signup.php?signup=usertaken");
+						header("Location: ../signup.php?signup=usernametaken");
 						exit();
 					}else{
 						//hashing the password
 						$hashedpassword = password_hash($password, PASSWORD_DEFAULT);
 						//Insert the user into the database
-						$sql = "INSERT INTO useracc (firstname, lastname, username, dob, gender, email, telephone, password, county, category) VALUES ('$first', '$last', '$username', '$dob', '$gender', '$email', '$phone', '$hashedpassword', '$county', '$category')";
+						$sql = "INSERT INTO `useracc`(`firstname`, `lastname`, `username`, `dob`, `gender`, `email`, `telephone`, `password`, `county`, `category`) VALUES ('$first', '$last', '$username', '$dob', '$gender', '$email', '$phone', '$hashedpassword', '$county', '$category')";
 						mysqli_query($conn, $sql);
-						header("Location: ../index.php?signup=success");
+						header("Location: ../login.php?signup=success");
 						exit();
 					}
 				}

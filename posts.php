@@ -1,11 +1,6 @@
 <?php
-<<<<<<< HEAD
-require("config.php"); 
-#include('session.php');
-=======
 session_start();
 require("config.php");
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
 ?>
 <!DOCTYPE html>
 <html>
@@ -103,11 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
             </div>
             <div class="w3ls_logo_products_left">
-<<<<<<< HEAD
-                  
-=======
                 <h1><a href="index.php"><img src=generatedtext.jpg style=width:100%></a></h1>
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
             </div>
             <div class="w3l_search">
                 <form action="searchpost.php" method="post">
@@ -158,11 +149,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
     <!--- groceries --->
     <div class="products">
-<<<<<<< HEAD
-         <img src="gen6.jpg"style=width:1000px>
-=======
+         <img src="gen6.jpg" style=width:1000px>
          <img src="short.jpg" style=width:100px>
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
         <div class="container">
             
        <!--     <div class="col-md-4 products-left">

@@ -8,14 +8,14 @@ if(isset($_POST['submit'])){
 	$last = mysqli_real_escape_string($db, $_POST['lastname']);
 	$username = mysqli_real_escape_string($db, $_POST['username']);
 	$email = mysqli_real_escape_string($db, $_POST['email']);
-	$phoneNumber = mysqli_real_escape_string($db, $_POST['telephone']);
+	$phone = mysqli_real_escape_string($db, $_POST['telephone']);
 	$password = mysqli_real_escape_string($db, $_POST['password']);
 	$county = mysqli_real_escape_string($db, $_POST['county']);
 	$category = mysqli_real_escape_string($db, $_POST['category']);
 
 	//Error handlers
 	//Check for empty fields
-	if(empty($first)|| empty($last) || empty($username)|| empty($email)|| empty($phoneNumber)|| empty($password) || empty($county) || empty($category)){
+	if(empty($first)|| empty($last) || empty($username)|| empty($email)|| empty($phone)|| empty($password) || empty($county) || empty($category)){
 		header("Location:signup.php?signup=empty");
 		exit();
 	}else{
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
 						//hashing the password
 						$hashedpassword = password_hash($password, PASSWORD_DEFAULT);
 						//Insert the user into the database
-						$sql = "INSERT INTO useracc(firstname, lastname, username, email, telephone, password, county, category) VALUES ('$first', '$last', '$username', '$email', '$phoneNumber', '$hashedpassword', '$county', '$category');";
+						$sql = "INSERT INTO useracc(firstname, lastname, username, email, telephone, password, county, category) VALUES ('$first', '$last', '$username', '$email', '$phone', '$hashedpassword', '$county', '$category');";
 						mysqli_query($db, $sql);
                         
 					header("Location:login.php=?signup success");
