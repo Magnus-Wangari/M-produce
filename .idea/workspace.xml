@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87d67ce8-5bdc-4b52-aa6b-958cf2775aec" name="Default Changelist" comment="included the pesapal but not yet intergrated it in our project">
-      <change beforePath="$PROJECT_DIR$/includes/signup.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/signup.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/logout.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/logout.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-cart-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-cart-form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signup.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +68,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="1" />
-          <entry key="php" value="790" />
+          <entry key="php" value="851" />
           <entry key="txt" value="74" />
         </counts>
       </usages-collector>
@@ -76,7 +76,7 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="31" />
-          <entry key="PHP" value="759" />
+          <entry key="PHP" value="820" />
           <entry key="PLAIN_TEXT" value="74" />
         </counts>
       </usages-collector>
@@ -85,7 +85,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="1" />
           <entry key="js" value="1" />
-          <entry key="php" value="48" />
+          <entry key="php" value="52" />
           <entry key="png" value="1" />
           <entry key="sql" value="4" />
           <entry key="txt" value="4" />
@@ -99,7 +99,7 @@
           <entry key="HTML" value="1" />
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="48" />
+          <entry key="PHP" value="52" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="2" />
@@ -113,31 +113,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/posts.php">
+        <entry file="file://$PROJECT_DIR$/logout.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#b#0;n#div#0;n#div#0;n#figure#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/signup.inc.php">
+        <entry file="file://$PROJECT_DIR$/includes/logout.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/signup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="102">
+              <caret line="6" column="25" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -152,8 +140,13 @@
       <find>phone</find>
       <find>conn</find>
       <find>db</find>
+      <find>signup</find>
+      <find>config.php</find>
       <find>head</find>
     </findStrings>
+    <replaceStrings>
+      <replace>includes/db.inc.php</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -165,7 +158,6 @@
         <option value="$PROJECT_DIR$/adminedit.php" />
         <option value="$PROJECT_DIR$/oldies/login.php" />
         <option value="$PROJECT_DIR$/forms.css" />
-        <option value="$PROJECT_DIR$/shopping-cart-form.php" />
         <option value="$PROJECT_DIR$/pesapal-ipn-listener.php" />
         <option value="$PROJECT_DIR$/pesapal-iframe.php" />
         <option value="$PROJECT_DIR$/includes/login.inc.php" />
@@ -177,10 +169,13 @@
         <option value="$PROJECT_DIR$/signupadv.php" />
         <option value="$PROJECT_DIR$/searchpost.php" />
         <option value="$PROJECT_DIR$/checkout.php" />
-        <option value="$PROJECT_DIR$/signup.inc.php" />
-        <option value="$PROJECT_DIR$/signup.php" />
         <option value="$PROJECT_DIR$/includes/signup.inc.php" />
         <option value="$PROJECT_DIR$/posts.php" />
+        <option value="$PROJECT_DIR$/shopping-cart-form.php" />
+        <option value="$PROJECT_DIR$/signup.php" />
+        <option value="$PROJECT_DIR$/signup.inc.php" />
+        <option value="$PROJECT_DIR$/includes/logout.inc.php" />
+        <option value="$PROJECT_DIR$/logout.inc.php" />
       </list>
     </option>
   </component>
@@ -190,6 +185,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="662" />
@@ -250,12 +246,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Script.signup.inc.php">
     <configuration name="index.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/M-produce/index.php">
       <method v="2" />
     </configuration>
+    <configuration name="signup.inc.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/signup.inc.php">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.index.php" />
+      <item itemvalue="PHP Script.signup.inc.php" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.signup.inc.php" />
         <item itemvalue="JavaScript Debug.index.php" />
       </list>
     </recent_temporary>
@@ -276,7 +280,7 @@
       <workItem from="1540229071791" duration="5550000" />
       <workItem from="1540284994193" duration="13381000" />
       <workItem from="1540312345281" duration="2507000" />
-      <workItem from="1540365779021" duration="3673000" />
+      <workItem from="1540365779021" duration="5814000" />
     </task>
     <task id="LOCAL-00001" summary="included the pesapal but not yet intergrated it in our project">
       <created>1540365963810</created>
@@ -289,7 +293,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25111000" />
+    <option name="totallyTimeSpent" value="27252000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -310,7 +314,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32923076" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -499,13 +503,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/checkout.html" />
-    <entry file="file://$PROJECT_DIR$/shopping-cart-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/checkout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -520,17 +517,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/signup.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/signup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="190">
+          <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -541,6 +531,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/signup.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopping-cart-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/posts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -548,6 +548,20 @@
           <folding>
             <element signature="n#style#0;n#p#0;n#b#0;n#div#0;n#div#0;n#figure#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/logout.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="25" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logout.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
