@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
 					exit();
 				}else{
 					//Check username has not been repeted
-					$sql = "SELECT * FROM useracc WHERE username = '$username' ";
+					$sql = "SELECT * FROM useracc WHERE username = '$username' OR email = '$email' OR telephone = '$phone'";
 					$result = mysqli_query($conn, $sql);
 					$resultCheck = mysqli_num_rows($result);
 					
