@@ -1,5 +1,5 @@
 <?php
-	include 'includes/db.inc.php';
+	include ('config.php');
 	session_start();
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
 
             <div class = "loginbox">
 
-                <form class= "signup-form" action="includes/login.inc.php" method="POST">
+                <form class= "signup-form" action="login.inc.php" method="POST">
                     <input type = "text" name = "username" placeholder="Username/Email" />
                     <input type = "password" name = "password" placeholder="Password" />
                     <input type = "submit" name ="submit" value=Login>

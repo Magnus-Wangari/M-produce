@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-	include('config.php');
+	include ('config.php');
 	
 	$username = mysqli_real_escape_string($db, $_POST['username']);
 	$password = mysqli_real_escape_string($db, $_POST['password']);
@@ -12,7 +12,8 @@ if(isset($_POST['submit'])){
 	if(empty($username)|| empty($password)){
 		header("Location:login.php?login=empty");
 		exit();
-	}else{
+	}
+    else{
          
 		$sql = "SELECT * FROM useracc WHERE username = '$username' OR email = '$email' ";
 		$result = mysqli_query($db, $sql);
