@@ -29,16 +29,16 @@ if(isset($_POST['submit'])){
 				    exit();
 				}elseif($hashedpasswordCheck == true){
 					//Log in  the user here
-					$_SESSION['first'] = $row['first_name'];
+                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['username'] = $row['username'];
+					/*$_SESSION['first'] = $row['first_name'];
 					$_SESSION['last'] = $row['last_name'];
-					$_SESSION['username'] = $row['username'];
 					$_SESSION['dob'] = $row['dob'];
 					$_SESSION['gender'] = $row['gender'];
-					$_SESSION['email'] = $row['email'];
 					$_SESSION['phone'] = $row['telephone'];
 					$_SESSION['password'] = $row['password'];
 					$_SESSION['county'] = $row['county'];
-					$_SESSION['category'] = $row['category'];
+					$_SESSION['category'] = $row['category'];*/
 					header("Location: ../posts.php?login=success");
 					exit();
 				}

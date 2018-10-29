@@ -74,13 +74,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <p><b><a href="http://www.agricultureauthority.go.ke/category/prices/">News Feeds</a></b></p>
                     </li>
                     <li>
-                        <p><b><a href="userprofile.php">View Profile</a></b></li>
+                        <p><b><a href="userprofile.php">View Profile</a></b>
+                    </li>
                     <li>
-                        <p><b><a href="view.php"></a></b></li>
+                        <p><b><a href="view.php"></a></b>
+                    </li>
+                    <li>
+                        <p><b><a href="checkout.php">Cart</a></b></p>
+                    </li>
                     <li>
                         <p><b><a href="logout.inc.php">Logout</a></b></p>
                     </li>
-                    <li>
+
                         <!-- <p><b><a href="posts.php">View Posts</a></b></li>-->
 
                 </ul>
@@ -100,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="w3ls_logo_products_left1">
                 <ul class="phone_email">
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>Order Online or Contact us:(+254788229272)</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i>Order Online or Contact us:(+254 788 229 272)</li>
 
                 </ul>
             </div>
@@ -212,9 +217,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="agile_top_brands_grids">
                      <?php
                             $sel_query="Select * from post";
-$result = mysqli_query($db,$sel_query);
-    
-while($row =$result-> fetch_assoc()) { ?>
+                            $result = mysqli_query($db,$sel_query);
+                            while($row =$result-> fetch_assoc()) { ?>
 
                     <div class="col-md-4 top_brand_left">
                         <div class="hover14 column">
@@ -240,21 +244,21 @@ while($row =$result-> fetch_assoc()) { ?>
                                                         <h5>
                                                             <?php echo $row["county"]; ?>
                                                         </h5>
-<span></span></h4>
+                                                        <span></span>
+                                                    </h4>
                                                 </div>
-                                              <div class="snipcart-details top_brand_home_details">
-                                                    <form action="shopping-cart-form.php" method="post">
+                                                <div class="snipcart-details top_brand_home_details">
+                                                    <form action="addtocart.php?id=<?php echo $row["postid"];?>" method="post">
                                                         <fieldset>
                                                             <input type="hidden" name="cmd" value="_cart">
                                                             <input type="hidden" name="add" value="1">
                                                             <input type="hidden" name="business" value=" ">
                                                             <input type="hidden" name="item_name" value="<?php echo $row["productname"];?>">
                                                             <input type="hidden" name="amount" value="<?php echo $row["price"]; ?>">
-                                                          
                                                             <input type="hidden" name="currency_code" value="KES">
                                                             <input type="hidden" name="return" value=" ">
                                                             <input type="hidden" name="cancel_return" value=" ">
-                                                            <input type="submit" name="submit" value="Add to cart" class="button">
+                                                            <input type="submit" name="submit" value="Add to Cart" class="button">
                                                         </fieldset>
                                                     </form>
                                                 </div>
@@ -307,7 +311,7 @@ while($row =$result-> fetch_assoc()) { ?>
                     <ul class="address">
                         <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>59857,00200 <span>Nairobi.</span></li>
                         <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:mproduceproject@gmail.com">mproduceproject@gmail.com</a></li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+254 788229772</li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+254 788 229 772</li>
                     </ul>
                 </div>
                 <div class="col-md-3 w3_footer_grid">
