@@ -2,9 +2,8 @@
 session_start();
 
 if(isset($_POST['submit'])){
-    
-	include ('config.php');
-    
+
+    include 'config.php';
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
     //Error handlers
@@ -13,7 +12,7 @@ if(isset($_POST['submit'])){
         header("Location: login.php?login=empty");
         exit();
     }else{
-        
+
         $sql = "SELECT * FROM useracc WHERE username = '$username' OR email = '$username'";
         $result = mysqli_query($db, $sql);
         $resultCheck = mysqli_num_rows($result);
