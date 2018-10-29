@@ -233,15 +233,13 @@ include("config.php");
         <ul><li>
                 <p><b><a href="logoutad.php">Logout</a></b></p>
             </li>
+            
             <li>
-                <p><b><a href="ins.php">Insert New Order</a></b></p>
-            </li>
-            <li>
-                <p><b><a href="view.php">View Orders</a></b></li>
+                <p><b><a href="viewporders.php">View Orders</a></b></li>
             <li>
                 <p><b><a href="view.php">View user Accounts</a></b></li>
             <li>
-                <p><b><a href="view.php">View Posts</a></b></li>
+                <p><b><a href="viewposts.php">View Posts</a></b></li>
             <li>
             
 

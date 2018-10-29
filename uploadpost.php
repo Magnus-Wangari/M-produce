@@ -1,11 +1,7 @@
 
 <?php
-session_start();
    require('config.php');
-<<<<<<< HEAD
   # include('session.php');
-=======
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
    session_start();
 if(isset($_POST['upload'])){
  $email=$_SESSION['email'];
@@ -56,7 +52,7 @@ header('Location:posts.php');
         list-style-type: none;
         padding: 10px;
         margin: 0;
-        background-color:grey;
+        background-color:forestgreen;
         border-radius: 10px;
 
         overflow: hidden;
@@ -94,67 +90,45 @@ header('Location:posts.php');
             }
             .btn-file {
     position: relative;
-    background-color: dodgerblue;
+    background-color: forestgreen;
     font-size:18px;
     width:10%;
     color:white;
-<<<<<<< HEAD
     border:solid;
     border-color:transparent;
     border-radius:50px;
     opacity:0.7;
-=======
-                border: solid transparent;
-                border-radius:50px;
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
    
 }
  input[type=file] {
     padding:8px;
     margin:8px;
     position: relative;
-    background-color: dodgerblue;
+    background-color: forestgreen;
     font-size:18px;
     width:19%;
     color:black;
-<<<<<<< HEAD
     border:solid;
     border-color:transparent;
     border-radius:10px;
-=======
-     border: solid transparent;
-     border-radius:50px;
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
 }
 input[type=text] {
     padding:15px;
     margin:8px;
-<<<<<<< HEAD
     width:55%;
     border:solid;
-    border-color:dodgerblue;
+    border-color:limegreen;
     border-radius:10px;
-=======
-    width:35%;
-    border: solid limegreen;
-    border-radius:50px;
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
     opacity:0.6;
     border-width:1px;
 }
     input[type=email] {
     padding:15px;
     margin:8px;
-<<<<<<< HEAD
     width:55%;
     border:solid;
-    border-color:dodgerblue;
+    border-color:limegreen;
     border-radius:10px;
-=======
-    width:35%;
-                border: solid limegreen;
-                border-radius:50px;
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
     opacity:0.6;
     border-width:1px;            
     
@@ -163,13 +137,12 @@ input[type=text] {
     margin:8px;
     width:55%;
     border:solid;
-    border-color:dodgerblue;
+    border-color:limegreen;
     border-radius:10px;
     opacity:0.6;
     border-width:1px; 
             }
 
-/*
 #img-upload{
     width: 100%;
 }
@@ -179,15 +152,10 @@ input[type=text] {
         padding: 0px;
         align-self: center;
         justify-content: center;
+
     }        
-<<<<<<< HEAD
             
 
-=======
-*/
-
-            
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
         </style>
     </head>
 
@@ -219,22 +187,12 @@ input[type=text] {
       echo "</div>";
         
   ?>        <div id=box>
-           <!-- <img src=gen6.jpg style="width:900px">-->
+           <img src=gen6.jpg style="width:900px">
                 <form method="POST" action="uploadpost.php" enctype="multipart/form-data">
-<<<<<<< HEAD
                     
                      <p>  <input type=email id="email"  name="email" placeholder="email">
                    <p> <input type=text id="productname"  name="productname" placeholder="Product Name">
                     <p>   <input type=text id="price"  name="price" placeholder="Price per Kg">
-=======
-                    <input type="hidden" name="size" value="1000000">
-                    <div>
-  	  <input type="file" name="filetoupload">
-  	</div>
-                     <p><input type=email id="email"  name="email" placeholder="email">
-                   <p><input type=text id="productname"  name="productname" placeholder="Product Name">
-                    <p><input type=text id="price"  name="price" placeholder="Price per Kg">
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
                    <p>  <input type=text id="quantity"  name="quantity" placeholder="Quantity Available">
                        			
 				
@@ -290,12 +248,8 @@ input[type=text] {
 				</select>
                    </P>
                     <div>
-<<<<<<< HEAD
                         <button type="submit" name="upload"class="btn-file">POST</button>
                      <input type="hidden" name="size" value="1000000">
-=======
-                        <button type="submit" name="upload" class="btn-file">POST</button>
->>>>>>> 8e21554b32f7bcb53e7b817f2d43f3af9651128d
                     
   	               <input type="file" name="filetoupload">
                     </div>
