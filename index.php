@@ -187,6 +187,12 @@ session_start();
                 <li>
                     <p><b><a href="includes/logout.inc.php">Logout</a></b></p>
                 </li>
+                <li>
+                    <p><b><a href="posts.php">View Posts</a></b></p>
+                </li>
+                <li>    
+                    <p><b><a href="http://www.agricultureauthority.go.ke/category/prices">News Feed</a></b></p>
+                </li>
                 </ul>';
     }else{
         echo '<ul>

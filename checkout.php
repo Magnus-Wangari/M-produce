@@ -1,7 +1,7 @@
 ﻿<?php
 session_start();
 include 'includes/db.inc.php';
-
+$cart = $_SESSION['cart'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,6 +17,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //for-mobile-apps -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.inc.css" rel="stylesheet" type="text/css" media="all" />
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
@@ -55,13 +56,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><p><b><a href="includes/logout.inc.php">Logout</a></b></p></li>
                 </ul>
 			</div>
-			<div class="product_list_header">  
+			<!--<div class="product_list_header">
 					<form action="checkout.php" method="post" class="last"> 
 						<input type="hidden" name="cmd" value="_cart">
 						<input type="hidden" name="display" value="1">
 						<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-					</form>  
-			</div>
+					</form>
+			</div>-->
 			<div class="clearfix"> </div>
 		</div>
 	</div>
@@ -112,130 +113,180 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- checkout -->
 	<div class="checkout">
 		<div class="container">
-			<div class="checkout-right">
+            <div class="checkout-right">
 				<table class="timetable_sub">
 					<thead>
 						<tr>
-							<th>Product Name</th>
-							<th>Quantity</th>
-							<th>Product Price</th>
-							<th>Price</th>
-							<th>Remove</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
 						</tr>
 					</thead>
-					<tr class="rem1">
-                        <td class="invert"><?php
-                            $product_name['']
-                            ?></td>
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
-						</td>
-						<td class="invert">Tata Salt</td>
-						
-						<td class="invert">$290.00</td>
-						<td class="invert">
-							<div class="rem">
-								<div class="close1"> </div>
-							</div>
-							<script>$(document).ready(function(c) {
-								$('.close1').on('click', function(c){
-									$('.rem1').fadeOut('slow', function(c){
-										$('.rem1').remove();
-									});
-									});	  
-								});
-						   </script>
-						</td>
-					</tr>
-					<tr class="rem2">
-						<td class="invert">2</td>
-						<td class="invert-image"><a href="single.html"><img src="images/2.png" alt=" " class="img-responsive" /></a></td>
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
-						</td>
-						<td class="invert">Fortune oil</td>
-					
-						<td class="invert">$250.00</td>
-						<td class="invert">
-							<div class="rem">
-								<div class="close2"> </div>
-							</div>
-							<script>$(document).ready(function(c) {
-								$('.close2').on('click', function(c){
-									$('.rem2').fadeOut('slow', function(c){
-										$('.rem2').remove();
-									});
-									});	  
-								});
-						   </script>
-						</td>
-					</tr>
-					<tr class="rem3">
-						<td class="invert">3</td>
-						<td class="invert-image"><a href="single.html"><img src="images/3.png" alt=" " class="img-responsive" /></a></td>
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
-						</td>
-						<td class="invert">Aashirvaad atta</td>
-						
-						<td class="invert">$15.00</td>
-						<td class="invert">
-							<div class="rem">
-								<div class="close3"> </div>
-							</div>
-							<script>$(document).ready(function(c) {
-								$('.close3').on('click', function(c){
-									$('.rem3').fadeOut('slow', function(c){
-										$('.rem3').remove();
-									});
-									});	  
-								});
-						   </script>
-						</td>
-					</tr>
-								<!--quantity-->
-									<script>
-									$('.value-plus').on('click', function(){
-										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
-										divUpd.text(newVal);
-									});
+                    <tbody>
+                    <?php
+                    //print_r($cart);
+                    $total = 0;
+                    foreach ($cart as $key => $value) {
+                    //echo $key . " : " . $value['quantity'] ."<br>";
+                    $cartsql = "SELECT * FROM post WHERE postid = '$key'";
+                    $cartres = mysqli_query($conn, $cartsql);
+                    $cartr = mysqli_fetch_assoc($cartres);
 
-									$('.value-minus').on('click', function(){
-										var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
-										if(newVal>=1) divUpd.text(newVal);
-									});
-									</script>
-								<!--quantity-->
+                    ?>
+
+                        <tr>
+                            <td>
+                                <a class="remove" href="delcart.php?id=<?php echo $key; ?>"><i class="fa fa-times"></i></a>
+                            </td>
+                            <td>
+                                <a href="#"><img src="<?php echo $cartr['image']; ?>" alt="" height="90" width="90"></a>
+                            </td>
+                            <td>
+                                <a href="single.php?id=<?php echo $cartr['postid']; ?>"><?php echo substr($cartr['productname'], 0 , 30); ?></a>
+                            </td>
+                            <td>
+                                <span class="amount">KES<?php echo $cartr['price']; ?>.00/-</span>
+                            </td>
+                            <td>
+                                <div class="quantity"><?php echo $value['quantity']; ?></div>
+                            </td>
+                            <td>
+                                <span class="amount">KES<?php echo ($cartr['price']*$value['quantity']); ?>.00/-</span>
+                            </td>
+                        </tr>
+                        <?php
+                        $total = $total + ($cartr['price']*$value['quantity']);
+                    } ?>
+                    <tr>
+                        <td colspan="6" class="actions">
+                            <div class="col-md-6">
+                                <!--	<div class="coupon">
+                                        <label>Coupon:</label><br>
+                                        <input placeholder="Coupon code" type="text"> <button type="submit">Apply</button>
+                                    </div> -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="cart-btn">
+                                    <!-- <button class="button btn-md" type="submit">Update Cart</button> -->
+                                    <a href="checkout.php" class="button btn-md" >Checkout</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                    <!--<tr class="rem1">
+                        <td class="invert">1</td>
+                        <td class="invert-image"><a href="single.html"><img src="images/1.png" alt=" " class="img-responsive" /></a></td>
+                        <td class="invert">
+                            <div class="quantity">
+                                <div class="quantity-select">
+                                    <div class="entry value-minus">&nbsp;</div>
+                                    <div class="entry value"><span>1</span></div>
+                                    <div class="entry value-plus active">&nbsp;</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="invert">Tata Salt</td>
+
+                        <td class="invert">$290.00</td>
+                        <td class="invert">
+                            <div class="rem">
+                                <div class="close1"> </div>
+                            </div>
+                            <script>$(document).ready(function(c) {
+                                    $('.close1').on('click', function(c){
+                                        $('.rem1').fadeOut('slow', function(c){
+                                            $('.rem1').remove();
+                                        });
+                                    });
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <tr class="rem2">
+                        <td class="invert">2</td>
+                        <td class="invert-image"><a href="single.html"><img src="images/2.png" alt=" " class="img-responsive" /></a></td>
+                        <td class="invert">
+                            <div class="quantity">
+                                <div class="quantity-select">
+                                    <div class="entry value-minus">&nbsp;</div>
+                                    <div class="entry value"><span>1</span></div>
+                                    <div class="entry value-plus active">&nbsp;</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="invert">Fortune oil</td>
+
+                        <td class="invert">$250.00</td>
+                        <td class="invert">
+                            <div class="rem">
+                                <div class="close2"> </div>
+                            </div>
+                            <script>$(document).ready(function(c) {
+                                    $('.close2').on('click', function(c){
+                                        $('.rem2').fadeOut('slow', function(c){
+                                            $('.rem2').remove();
+                                        });
+                                    });
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <tr class="rem3">
+                        <td class="invert">3</td>
+                        <td class="invert-image"><a href="single.html"><img src="images/3.png" alt=" " class="img-responsive" /></a></td>
+                        <td class="invert">
+                            <div class="quantity">
+                                <div class="quantity-select">
+                                    <div class="entry value-minus">&nbsp;</div>
+                                    <div class="entry value"><span>1</span></div>
+                                    <div class="entry value-plus active">&nbsp;</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="invert">Aashirvaad atta</td>
+
+                        <td class="invert">$15.00</td>
+                        <td class="invert">
+                            <div class="rem">
+                                <div class="close3"> </div>
+                            </div>
+                            <script>$(document).ready(function(c) {
+                                    $('.close3').on('click', function(c){
+                                        $('.rem3').fadeOut('slow', function(c){
+                                            $('.rem3').remove();
+                                        });
+                                    });
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <!--quantity-->
+                    <!--<script>
+                        $('.value-plus').on('click', function(){
+                            var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+                            divUpd.text(newVal);
+                        });
+
+                        $('.value-minus').on('click', function(){
+                            var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+                            if(newVal>=1) divUpd.text(newVal);
+                        });
+                    </script>-->
+                    <!--quantity-->
 				</table>
 			</div>
 			<div class="checkout-left">	
 				<div class="checkout-left-basket">
-					<h4>Continue to basket</h4>
+					<h4>Cart Total</h4>
 					<ul>
-						<li>Product1 <i>-</i> <span>$15.00 </span></li>
-						<li>Product2 <i>-</i> <span>$25.00 </span></li>
-						<li>Product3 <i>-</i> <span>$29.00 </span></li>
-						<li>Total Service Charges <i>-</i> <span>$15.00</span></li>
-						<li>Total <i>-</i> <span>$84.00</span></li>
-					</ul>
+						<li>Cart Totals<i>-</i> <span class="amount">KES <?php echo $total; ?>.00/-</span></li>
+						<li>Order Total<i>-</i> <span class="amount">KES <?php echo $total; ?>.00/-</span></li>
+                    </ul>
 				</div>
 				<div class="checkout-right-basket">
 					<a href="posts.php"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
