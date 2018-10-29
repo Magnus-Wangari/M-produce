@@ -1,30 +1,24 @@
-<?php
-	include('config.php');
-?>
 <!DOCTYPE html>
 <html>
     <head>
-    <title>sign up</title>
-    <link href=forms.css rel="stylesheet" type="text/css">
+        <title>Signup</title>
+        <link href=forms.css rel="stylesheet" type="text/css">
     </head>
-
-</html>
-
-	<section class = "xop-container">
+    <body>
+    <section class = "xop-container">
 		<div class = "xop-left">
             <article>
-            <h1>M-produce</h1>
+                <h1>M-produce</h1>
             </article>
-            
         </div>
         <div class=xop-right>
-		<article>
-            <h1>Signup</h1>
+            <article>
+                <h1>Signup</h1>
             </article>	
 			<form class= "signup-form" action="includes/signup.inc.php" method="POST">
-				<input type = "text" name = "first" placeholder="Firstname" required />
-				<input type = "text" name = "last" placeholder="Lastname" required />
-				<input type = "text" name = "username" placeholder="Username" required/>
+				<input type = "text" name = "first" placeholder="Firstname"  />
+				<input type = "text" name = "last" placeholder="Lastname"  />
+				<input type = "text" name = "username" placeholder="Username" />
 				<input type="date" name="dob">
 				<select name ="gender">
 					<option value="">Gender..</option>
@@ -32,9 +26,9 @@
 					<option value="Male">Male</option>
 					<option value="unspecified">Unspecified</option>
 				</select>
-				<input type = "email" name = "email" placeholder = "Email" required/>
-				<input type = "text" name = "phone" placeholder="Phone Number" required/>
-				<input type = "password" name = "password" placeholder="Password" required/>
+				<input type = "email" name = "email" placeholder = "Email" />
+				<input type = "text" name = "phone" placeholder="Phone Number" />
+				<input type = "password" name = "password" placeholder="Password" />
 				<select name="county">
 					<option value="">Choose County...</option>
 					<option value="Baringo">Baringo</option>
@@ -93,13 +87,8 @@
 				</select>
 			<P>	<input type = "submit" name ="submit" value="Sign Up"> </P>
 			</form>
-		</div>
-	</section>
+        </div>
+    </section>
+    </body>
+</html>
 
-	<script>
-		
-	</script>
-
-<?php
-	include_once 'footer.php';
-?>

@@ -24,15 +24,15 @@
 		</tr>
 		<tr>
 			<td>Shopper's First Name:</td>
-			<td><input type="text" name="first_name" value="John" /></td>
+			<td><input type="text" name="first_name" placeholder="First Name" value="John" /></td>
 		</tr>
 		<tr>
 			<td>Shopper's Last Name:</td>
-			<td><input type="text" name="last_name" value="Doe" /></td>
+			<td><input type="text" name="last_name"  placeholder="Last Name" value="Doe" /></td>
 		</tr>
 		<tr>
 			<td>Shopper's Email Address:</td>
-			<td><input type="text" name="email" value="john@yahoo.com" /></td>
+			<td><input type="text" name="email"  placeholder="Email" value="john@yahoo.com" /></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Make Payment" /></td>

@@ -41,6 +41,7 @@
        body {
     margin: 0;
     padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(164, 222, 102, 0.10));
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
