@@ -3,13 +3,13 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-    include 'config.php';
+    include ('config.php');
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
     //Error handlers
     //Check if inputs are empty
     if(empty($username)|| empty($password)){
-        header("Location: login.php?login=empty");
+        header("Location:login.php?login=empty");
         exit();
     }else{
 
