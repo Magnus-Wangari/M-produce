@@ -1,4 +1,4 @@
-  <html>
+<html>
 
 <head>
 
@@ -10,9 +10,7 @@
     @import url('https://fonts.googleis.com/css?family=Pacifico|Rock+Salt');
     html,
     body,
-    section {
-        
-    }
+    section {}
 
     table {
         border-collapse: collapse;
@@ -30,11 +28,14 @@
     }
 
     tr:nth-child(even) {
-        background-color:palegreen;
-        opacity:0.5;
+        background-color: palegreen;
+        opacity: 0.5;
 
     }
-     tr:hover {background-color:lightgreen;}
+
+    tr:hover {
+        background-color: lightgreen;
+    }
 
     body {}
 
@@ -42,7 +43,7 @@
         text-align: center;
         padding: 5px;
         color: black;
-        font-family:sans-serif;
+        font-family: sans-serif;
     }
 
 
@@ -63,7 +64,7 @@
         list-style-type: none;
         padding: 10px;
         margin: 0;
-        background-color:green;
+        background-color: green;
         border-radius: 10px;
 
         overflow: hidden;
@@ -72,7 +73,7 @@
 
 
     }
-    
+
 
     li {
 
@@ -100,12 +101,12 @@
     p {
         text-align: center;
         font-size: 20px;
-        color:limegreen;
+        color: limegreen;
     }
 
-    button {  
-        text-align:center;
-        background-color:green;
+    button {
+        text-align: center;
+        background-color: green;
 
         width: 15%;
         padding: 5px 5px;
@@ -115,26 +116,27 @@
         box-sizing: border-box;
         border-radius: 30px;
         color: white;
-       float:right;
+        float: right;
         font-size: 15px;
 
     }
-    button a{
+
+    button a {
         list-style-type: none;
-        text-align:left;
+        text-align: left;
         text-decoration: none;
         color: white;
     }
-    button a:hover{
-        color:darkgreen;
+
+    button a:hover {
+        color: darkgreen;
     }
-    
-    
+
 </style>
 
 <body>
-<div class="short">
-    
+    <div class="short">
+
     </div>
     <ul>
         <li>
@@ -145,8 +147,7 @@
         </li>
         <li>
             <p><b><a href="userprofile.php">View Profile</a></b></li>
-        <li>
-            <p><b><a href="view.php">Notifications</a></b></li>
+        
         <li>
             <p><b><a href="posts.php">View Posts</a></b></li>
 
@@ -160,28 +161,39 @@
 
         <?php
 //check for a form submission
-require('config.php');
-#include('session.php');
-  
-if(isset($_POST['email'])){
+    include('session.php');
+    $_SESSION['login_user']=$row['email'];
+#require('config.php');
+#session_start(); 
+
+
+#echo $_SESSION['email']=$user;
+
+if($_SESSION['login_user']){
     
 $count=1;
-//$sel_query = "SELECT * from useracc where 'email'='".$_SESSION['email']."'"or die(mysql_error());
-$sel_query="Select firstname, lastname, dob, gender, email, telephone, category, county from useracc";
-$result = mysqli_query($db,$sel_query);
+#$_SESSION['login_user']=$row['email'];
+#$sel_query = "SELECT * from useracc where 'email'='".$_SESSION['login_user']."'"; 
+#$sel_query="Select firstname, lastname, dob, gender, email, telephone, category, county from useracc";
+#$result = mysqli_query($db,$sel_query);
+
+#while($row =$result-> fetch_assoc()) { ?>
     
-while($row =$result-> fetch_assoc()) { ?>
-
-
             <h2>
+                 
+ <?php #echo $_SESSION['login_user'] ; 
+     
+       ?>
+
                 <?php echo $row["firstname"]; ?>
-               <?php echo $row["lastname"]; ?>'s profile</h2><br/> 
+                <?php echo $row["lastname"]; ?>'s profile</h2><br/>
             <p>
-                Category:<?php echo $row["category"];?>
+                Category:
+                <?php echo $row["category"];?>
             </p>
-        
+
             <button> <a href="edit.php?email=<?php echo $row["email"]; ?>">Edit Profile</a></button>
-        
+
             <button> <a href="uploadpost.php?email=<?php echo $row["email"]; ?>">Post Produce</a></button>
 
             <div id=avatar>
@@ -203,7 +215,14 @@ while($row =$result-> fetch_assoc()) { ?>
                     <?php echo $row["lastname"]; ?>
                 </td>
             </tr>
+        <tr>
+                <td> UserName:</td>
+                <td>
+                    <?php echo $row["username"]; ?>
+                </td>
+            </tr>
             <tr>
+                
                 <td> Date of Birth:</td>
                 <td>
                     <?php echo $row["dob"]; ?>
@@ -243,24 +262,22 @@ while($row =$result-> fetch_assoc()) { ?>
     </table>
 
 
+
     <?php
-if($sel_query!=$row["email"]){
-        die("That username could not be found");
-    }
-       ?>
-        <?php
-    }
-    if($email!=$email){
-    die("There has been a fatal error.Please try again");
-}
+    #}
+    
 
         
         
 ?>
-            <?php $count++; ?>
-            <?php
-}else die("You need to enter a username");
-                ?>
+        <?php $count++; ?>
+        <?php
+    }
+    
+
+        
+        
+?>
 
 
 </body>

@@ -1,7 +1,8 @@
 <?php
 
-session_start();
-require("config.php");
+#session_start();
+#require("config.php");
+include('session.php'); 
 
 ?>
 <!DOCTYPE html>
@@ -58,6 +59,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="w3l_offers">
                 <p>Get Farm Produce With Convinience.
                     <?php #echo $login_session; 
+     
+       ?>
+                    <p></p>
+                    <?php echo $login_session; 
      
        ?>
                     <!--<a href="products.html">SHOP NOW</a></p>-->
