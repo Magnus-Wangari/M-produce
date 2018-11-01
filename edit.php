@@ -1,5 +1,5 @@
 <?php
-#include('session.php');
+
 //$email=$_REQUEST['email'];
                               
 ?>
@@ -174,11 +174,13 @@ input[type=text] {
 
 <?php
     
- require('config.php');
-session_start();
+ #require('config.php');
+#session_start();
+include('session.php');
      
-// $email = $_POST[‘email’];  
-$query="Select * from useracc";
+// $email = $_POST[‘email’]; 
+$query = "SELECT * from useracc where 'email'='".$_SESSION['login_user']."'"; 
+#$query="Select * from useracc";
 #$query = "SELECT * from useracc where 'email'='".$_SESSION['email']."'"or die(mysql_error());
 $result = mysqli_query($db, $query) or die ( mysqli_error());
 $row = mysqli_fetch_assoc($result); 
@@ -213,7 +215,7 @@ echo '<p style="color:#FF0000;">'.$status.'</p>';
 <div>
     <h2>
                 <?php echo $row["firstname"]; ?>
-                <?php echo $row["lastname"]; ?>'s profile</h2><br/>
+                <?php echo $row["lastname"]; ?></h2><br/>
             <p>
 <form name="form" method="post" action=""style="text-align:center;font-size:22px"> 
 <input type="hidden" name="new" value="1" />
