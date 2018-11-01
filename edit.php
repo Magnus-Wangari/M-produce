@@ -17,8 +17,8 @@
             }
             
      #box{
-           align-content: center;
-           left:55px;
+           align-content:left;
+           left:5px;
            
             }
            input[type=submit] {
@@ -31,7 +31,7 @@
     border-style:solid;
     border-color:white;
     border-radius:50px;
-    border-width:4px;
+    border-width:1px;
    
 }
  input[type=file] {
@@ -44,7 +44,7 @@
     color:black;
     border:solid;
     border-color:transparent;
-    border-radius:50px;
+    border-radius:30px;
 }
 input[type=text] {
     padding:10px;
@@ -52,9 +52,9 @@ input[type=text] {
     width:55%;
     border:solid;
     border-color:limegreen;
-    border-radius:50px;
+    border-radius:30px;
     opacity:0.6;
-    border-width:2px;
+    border-width:1px;
 }
             input[type=email] {
     padding:10px;
@@ -73,9 +73,9 @@ input[type=text] {
     width:55%;
     border:solid;
     border-color:limegreen;
-    border-radius:50px;
+    border-radius:30px;
     opacity:0.6;
-    border-width:2px;
+    border-width:1px;
     
 }
                  input[type=date] {
@@ -84,9 +84,9 @@ input[type=text] {
     width:55%;
     border:solid;
     border-color:limegreen;
-    border-radius:50px;
+    border-radius:10px;
     opacity:0.6;
-     border-width:2px;
+     border-width:1px;
     
     
 }
@@ -103,8 +103,8 @@ input[type=text] {
 }
     img {
         width: 40%;
-        border-radius: 80px;
-        padding: 0px;
+        border-radius:0px;
+        padding:0px;
         align-self: center;
         justify-content: center;
 
@@ -169,7 +169,7 @@ input[type=text] {
 <!--<a href="ins.php">Insert New Record</a> 
  <a href="logout.php">Logout</a></p> -->
 <div class=pic>
-        <img src=generatedtext.jpg >
+        <img src=generatedtext.jpg style="width:300px">
         </div>
 
 <?php
