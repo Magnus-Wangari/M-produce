@@ -54,6 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
     <!-- header -->
+   
     <div class="agileits_header">
         <div class="container">
             <div class="w3l_offers">
@@ -65,9 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                  <?php echo $login_session; 
      
        ?>
-                <?php #echo $_SESSION['first']; 
-     
-       ?>
+         
                     <!--<a href="products.html">SHOP NOW</a></p>-->
             </div>
             <div class="agile-login">
