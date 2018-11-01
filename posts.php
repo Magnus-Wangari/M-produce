@@ -49,6 +49,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     </script>
     <!-- start-smoth-scrolling -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-63611585-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 
 <body>
@@ -71,11 +79,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li>
                         <p><b><a href="userprofile.php">View Profile</a></b>
                     </li>
-                    <li>
+                    <!--<li>
                         <p><b><a href="view.php"></a></b>
-                    </li>
+                    </li>-->
                     <li>
-                        <p><b><a href="checkout.php">Cart</a></b></p>
+                        <p><b><a id="PayPalMiniCart_ViewCart">Cart</a></b></p>
                     </li>
                     <li>
                         <p><b><a href="logout.inc.php">Logout</a></b></p>
@@ -240,21 +248,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     </h4>
                                                 </div>
                                                 <div class="snipcart-details top_brand_home_details">
-                                                    <form action="addtocart.php?id=<?php echo $row["postid"];?>" method="post">
-                                                        <fieldset>
-                                                            <input type="hidden" name="cmd" value="_cart">
-                                                            <input type="hidden" name="add" value="1">
-                                                            <input type="hidden" name="business" value=" ">
-                                                            <input type="hidden" name="item_name" value="<?php echo $row["productname"];?>">
-                                                            <input type="hidden" name="amount" value="<?php echo $row["price"]; ?>">
-                                                            <input type="hidden" name="currency_code" value="KES">
-                                                            <input type="hidden" name="return" value=" ">
-                                                            <input type="hidden" name="cancel_return" value=" ">
-                                                            <input type="submit" name="submit" value="Add to Cart" class="button">
-                                                        </fieldset>
-                                                    </form>
+                                                        <form action="shopping-cart-form.php" method="post">
+                                                            <fieldset>
+                                                                <input type="hidden" name="cmd" value="_cart">
+                                                                <input type="hidden" name="add" value="1">
+                                                                <input type="hidden" name="business" value=" ">
+                                                                <input type="hidden" name="item_name" value="<?php echo $row["productname"];?>">
+                                                                <!--<input type="hidden" name="item_number" value="<?php /*echo $row['postid'];*/?>">-->
+                                                                <input type="hidden" name="amount" value="<?php echo $row["price"]; ?>">
+                                                                <input type="hidden" name="currency_code" value="KES">
+                                                                <input type="hidden" name="return" value=" ">
+                                                                <input type="hidden" name="cancel_return" value=" ">
+                                                                <input type="submit" name="submit" value="Add to Cart" class="button">
+                                                            </fieldset>
+                                                        </form>
                                                 </div>
-                                                
                                             </div>
                                         </figure>
                                     </div>
@@ -324,7 +332,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>Profile</h3>
                     <ul class="info">
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="posts.php">Store</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.php">My Cart</a></li>
+                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="">My Cart</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.php">Login</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="signup.php">Create Account</a></li>
                     </ul>
@@ -387,7 +395,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script>
         // Mini Cart
         paypal.minicart.render({
-            action: '#'
+            action: 'shopping-cart-form.php'
         });
 
         if (!~window.location.search.indexOf('reset=true')) {
@@ -395,6 +403,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             paypal.minicart.reset();
         }
 
+        $('#PayPalMiniCart_ViewCart').click(function(e) {
+            e.stopPropagation();
+            paypal.minicart.view.show();
+
+            /* restyle shopping cart as we like */
+            restyle_shopping_cart();
+
+        });
     </script>
     <!-- main slider-banner -->
     <script src="js/skdslider.min.js"></script>

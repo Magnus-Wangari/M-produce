@@ -28,19 +28,20 @@ if(isset($_POST['submit'])){
 				    header("Location: ../login.php?login=wrongpassword");
 				    exit();
 				}elseif($hashedpasswordCheck == true){
+
+                    header("Location: ../posts.php?login=success");
+
 					//Log in  the user here
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['username'] = $row['username'];
-					/*$_SESSION['first'] = $row['first_name'];
-					$_SESSION['last'] = $row['last_name'];
-					$_SESSION['dob'] = $row['dob'];
-					$_SESSION['gender'] = $row['gender'];
-					$_SESSION['phone'] = $row['telephone'];
-					$_SESSION['password'] = $row['password'];
-					$_SESSION['county'] = $row['county'];
-					$_SESSION['category'] = $row['category'];*/
-					header("Location: ../posts.php?login=success");
-					exit();
+                    $_SESSION['first'] = $row['firstname'];
+                    $_SESSION['last'] = $row['lastname'];
+                    $_SESSION['dob'] = $row['dob'];
+                    $_SESSION['gender'] = $row['gender'];
+                    $_SESSION['phone'] = $row['telephone'];
+                    $_SESSION['county'] = $row['county'];
+                    $_SESSION['category'] = $row['category'];
+
 				}
 			}								
 		}

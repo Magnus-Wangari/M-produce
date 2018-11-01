@@ -196,6 +196,7 @@ button.btn.btn-default.search:hover {
     text-transform: capitalize;
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .w3l_search input[type="search"] {
@@ -1559,7 +1560,7 @@ td.invert-image a img {
 }
 
 .checkout-right-basket a:hover {
-    background: #fe9126;
+    background: limegreen;
 }
 
 .checkout-right-basket a span {
