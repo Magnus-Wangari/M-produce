@@ -31,7 +31,7 @@ $last_name = $_POST['last_name'];
 $email = $_POST['email'];
 $phonenumber = '';//ONE of email or phonenumber is required
 
-$callback_url = 'http://www.yourdomain.com/redirect.php'; //redirect url, the page that will handle the response from pesapal.
+$callback_url = 'http://localhost/M-produce/success.php'; //redirect url, the page that will handle the response from pesapal.
 
 $post_xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><PesapalDirectOrderInfo xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" Amount=\"".$amount."\" Description=\"".$desc."\" Type=\"".$type."\" Reference=\"".$reference."\" FirstName=\"".$first_name."\" LastName=\"".$last_name."\" Email=\"".$email."\" PhoneNumber=\"".$phonenumber."\" xmlns=\"http://www.pesapal.com\" />";
 $post_xml = htmlentities($post_xml);
@@ -48,4 +48,4 @@ $iframe_src->sign_request($signature_method, $consumer, $token);
 ?>
 <iframe src="<?php echo $iframe_src;?>" width="100%" height="700px"  scrolling="no" frameBorder="0">
 	<p>Browser unable to load iFrame</p>
-</iframe>
+</iframe>#

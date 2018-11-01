@@ -1,12 +1,7 @@
 <?php
-
-/*require("config.php");
-
-session_start();*/
-
 include 'session.php';
-$ref = rand(10000, 1000000);
-$today = date("Y-m-d H:i:s");
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,61 +68,61 @@ $today = date("Y-m-d H:i:s");
     <div class="container">
         <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
             <li><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-            <li class="active">Checkout</li>
+            <li class="active">Payment Successful</li>
         </ol>
     </div>
 </div>
+<div id="Box">
+    <p>Detail Message</p>
+    <div class="alert alert-success">
+        <strong>PAYMENT SUCCESSFUL</strong>
+    </div>
+    <?php
+        $sql= "SELECT * FROM orders where email = '$user_check'";
+        $result = mysqli_query($db, $sql);
 
-<div class="products">
-    <!--<img src="short.jpg" style=width:100px>
-    <img src="gen6.jpg" style=width:1000px>-->
-    <div class="main-container">
-        <div class="main-wrapper">
-        <h2>CHECKOUT</h2>
-        <form class="signup-form" action="pesapal-iframe.php" method="post">
-            <label>Amount (in Kshs):</label><br>
-            <input type="text" name="amount" placeholder="Enter Amount..."  />
-            <label>Type:</label><br>
-            <input type="text" name="type" value="MERCHANT" readonly="readonly" />
-            <label>Description:</label><br>
-            <input type="text" name="description" value="Produce" />
-            <label>Reference:</label><br>
-            <input type="text" name="reference" value="<?php echo $ref ?>" />
-            <label>First Name:</label><br>
-            <input type="text" name="first_name" value="<?php echo $_SESSION['first']; ?>" />
-            <label>Last Name:</label><br>
-            <input type="text" name="last_name" value="<?php echo $_SESSION['last']; ?>" />
-            <label>Email:</label><br>
-            <input type="email" name="email" value="<?php echo $login_session; ?>" />
-            <input type="datetime-local" name="today" value="<?php echo $today; ?>" hidden="hidden" />
-            <button type="submit"  name="submit">Make Payment</button>
-        </form>
-            <?php
-            if(isset($_POST['submit'])) {
-                include('config.php');
-
-                $today = date("Y-m-d H:i:s");
-
-                $ref = mysqli_real_escape_string($db, $_POST['reference']);
-                $first = mysqli_real_escape_string($db, $_POST['first_name']);
-                $last = mysqli_real_escape_string($db, $_POST['last_name']);
-                $email = mysqli_real_escape_string($db, $_POST['email']);
-                $description = mysqli_real_escape_string($db, $_POST['description']);
-                $amount = mysqli_real_escape_string($db, $_POST['amount']);
-                $type = mysqli_real_escape_string($db, $_POST['type']);
-                $today = mysqli_real_escape_string($db, $_POST['today']);
-
-                $sql = "INSERT INTO orders(orderid, firstname, lastname, email, description, amount, type,Time) VALUES ('$ref','$first','$last','$email','$description','$amount','$type','$today')";
-                $results = mysqli_query($db, $sql);
-            }
+        if($row = mysqli_fetch_assoc($result)){
             ?>
-            <div class="checkout-right-basket">
-                <a href="posts.php"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
-            </div>
-    </div>
-    </div>
-    <div class="clearfix"> </div>
+            <dl class="dl-horizontal">
+                <dt>Order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID:</dt>
+                <dd><?php echo $row['orderid'];?></dd>
+                <dt>Order Name:</dt>
+                <dd><?php echo $row['description']; ?></dd>
+                <dt>Order&nbsp;&nbsp; Date:</dt>
+                <dd><?php echo $row['Time']; ?></dd>
+            </dl>
+    <?php
+        }
+    ?>
+
 </div>
-</body>
-<script src="js/minicart.min.js"></script>
-</html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+    #Box {
+        border: 1px solid limegreen;
+        border-radius: 30px;
+        width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+
+    p {
+        font-family: sans-serif;
+        font-size: 50px;
+        color: #ccc;
+        line-height: 50px;
+        text-align: center;
+    }
+    strong{
+        text-align: center;
+        font-size: 16px;
+    }
+
+    dl dt {
+        margin-left: 0;
+    }
+</style>
