@@ -1,24 +1,25 @@
 
 <?php
-   require('config.php');
-  # include('session.php');
-   session_start();
+   #require('config.php');
+   include('session.php');
+   #session_start();
 if(isset($_POST['upload'])){
- $email=$_SESSION['email'];
+ # $_SESSION['login_user']=$row['email'];
+   #$_SESSION['userlocation']=$row['location'];
 $msg="";
 //$conn=mysqli_connect("localhost","root","","cs project");
 $target_dir="post/";
 $target_file=$target_dir.basename($_FILES["filetoupload"]["name"]);
 #$result = mysqli_query($db,$sql);
 #$postid=$_POST['postid'];
-$email=$_POST['email'];
+#$email=$_POST['email']; 
 $productname=$_POST['productname'];
 $price=$_POST['price'];
 $quantity=$_POST['quantity'];
-$county=$_POST['county'];
+#$county=$_POST['county'];
     
 //insert into database
-$sql="INSERT INTO post (email, productname,  price,  image, quantity, county) VALUES ( '$email', '$productname', '$price', '$target_file', '$quantity', '$county')";
+$sql="INSERT INTO post (email, productname,  price,  image, quantity, county) VALUES ( '{$_SESSION['login_user']}', '$productname', '$price', '$target_file', '$quantity', '{$_SESSION['county']}')";
 
 mysqli_query($db,$sql);
     
@@ -97,7 +98,7 @@ header('Location:posts.php');
     border:solid;
     border-color:transparent;
     border-radius:50px;
-    opacity:0.7;
+   
    
 }
  input[type=file] {
@@ -187,16 +188,16 @@ input[type=text] {
       echo "</div>";
         
   ?>        <div id=box>
-           <img src=gen6.jpg style="width:900px">
+           <img src=generatedtext.jpg style="width:300px">
                 <form method="POST" action="uploadpost.php" enctype="multipart/form-data">
                     
-                     <p>  <input type=email id="email"  name="email" placeholder="email">
+                    <!-- <p>  <input type=email id="email"  name="email" placeholder="email">-->
                    <p> <input type=text id="productname"  name="productname" placeholder="Product Name">
                     <p>   <input type=text id="price"  name="price" placeholder="Price per Kg">
                    <p>  <input type=text id="quantity"  name="quantity" placeholder="Quantity Available">
                        			
 				
-			<P>	<select name="county">
+			<!--<P>	<select name="county">
 					<option value="">Choose County...</option>
 					<option value="Baringo">Baringo</option>
 					<option value="Bomet">Bomet</option>
@@ -246,7 +247,7 @@ input[type=text] {
 					<option value="Wajir">Wajir</option>
 					<option value="West Pokot">West Pokot</option>
 				</select>
-                   </P>
+                   </P>-->
                     <div>
                         <button type="submit" name="upload"class="btn-file">POST</button>
                      <input type="hidden" name="size" value="1000000">

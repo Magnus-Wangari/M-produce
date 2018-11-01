@@ -185,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                      <?php
                      $productname = $_POST['productname'];
                     if(isset($_POST['productname'])){
-                            $sel_query="Select * from post where productname='$productname'";
+                            $sel_query="Select * from post where productname='$productname'and county='{$_SESSION['county']}'";
                        
 $result = mysqli_query($db,$sel_query);
                    

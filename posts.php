@@ -62,7 +62,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      
        ?>
                     <p></p>
-                    <?php echo $login_session; 
+                 <?php echo $login_session; 
+     
+       ?>
+                <?php #echo $_SESSION['first']; 
      
        ?>
                     <!--<a href="products.html">SHOP NOW</a></p>-->

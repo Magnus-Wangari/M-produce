@@ -162,7 +162,7 @@
         <?php
 //check for a form submission
     include('session.php');
-    $_SESSION['login_user']=$row['email'];
+   # $_SESSION['login_user']=$row['email'];
 #require('config.php');
 #session_start(); 
 
