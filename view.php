@@ -86,11 +86,9 @@ table {
             <li>
                 <p><b><a href="logoutad.php">Logout</a></b></p>
             </li>
-            <li>
-                <p><b><a href="ins.php">Insert New Order</a></b></p>
-            </li>
-            <li>
-                <p><b><a href="view.php">View Orders</a></b></li>
+            
+           <!-- <li>
+                <p><b><a href="view.php">View Orders</a></b></li>-->
             <li>
                 <p><b><a href="view.php">View user Accounts</a></b></li>
             <li>

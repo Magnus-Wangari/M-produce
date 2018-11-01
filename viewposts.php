@@ -86,11 +86,9 @@ table {
             <li>
                 <p><b><a href="logoutad.php">Logout</a></b></p>
             </li>
-            <li>
-                <p><b><a href="ins.php">Insert New Order</a></b></p>
-            </li>
-            <li>
-                <p><b><a href="view.php">View Orders</a></b></li>
+            
+            <!--<li>
+                <p><b><a href="view.php">View Orders</a></b></li>-->
             <li>
                 <p><b><a href="view.php">View user Accounts</a></b></li>
             <li>
@@ -153,9 +151,9 @@ while($row =$result-> fetch_assoc()) { ?>
                             <?php echo $row["date"]; ?>
                         </td>
                         
-                        <td align="center">
+                       <!-- <td align="center">
                             <a href="adminedit.php?email=<?php echo $row["email"]; ?>"><img src=edit2.jpg style=width:30px;></a>
-                        </td>
+                        </td>-->
                         <td align="center">
                             <a href="deletepost.php?postid=<?php echo $row["postid"]; ?>"><img src=delete.png style=width:30px;></a>
                         </td>
