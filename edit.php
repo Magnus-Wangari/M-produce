@@ -102,7 +102,7 @@ input[type=text] {
     width: 100%;
 }
     img {
-        width: 40%;
+        width: 0%;
         border-radius:0px;
         padding:0px;
         align-self: center;
@@ -137,7 +137,10 @@ input[type=text] {
 
 
     }    
-           
+        h1{
+            color: forestgreen;
+            text-align: center;
+        }
     
     
     
@@ -169,7 +172,8 @@ input[type=text] {
 <!--<a href="ins.php">Insert New Record</a> 
  <a href="logout.php">Logout</a></p> -->
 <div class=pic>
-        <img src=generatedtext.jpg style="width:300px">
+       
+   <h1> Edit Profile</h1>
         </div>
 
 <?php
@@ -179,18 +183,18 @@ input[type=text] {
 include('session.php');
      
 // $email = $_POST[‘email’]; 
-$query = "SELECT * from useracc where 'email'='".$_SESSION['login_user']."'"; 
-#$query="Select * from useracc";
+
+
+if(isset($_POST['email']))//&& $_POST['firstname']==1)
+   
+{
+    # $query="Select * from useracc";
 #$query = "SELECT * from useracc where 'email'='".$_SESSION['email']."'"or die(mysql_error());
 $result = mysqli_query($db, $query) or die ( mysqli_error());
 $row = mysqli_fetch_assoc($result); 
+$query = "SELECT * from useracc where 'email'='".$_SESSION['login_user']."'"; 
 
 $status = "";
-if(isset($_POST['email']))//&& $_POST['firstname']==1)
-    
-{
- 
-  
     
 $firstname=$_REQUEST["firstname"];
 $lastname=$_REQUEST["lastname"];
