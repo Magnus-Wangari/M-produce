@@ -173,7 +173,7 @@ if($_SESSION['login_user']){
     
 $count=1;
 #$_SESSION['login_user']=$row['email'];
-#$sel_query = "SELECT * from useracc where 'email'='".$_SESSION['login_user']."'"; 
+$sel_query = "SELECT * from useracc where 'email'='".$_SESSION['login_user']."'"; 
 #$sel_query="Select firstname, lastname, dob, gender, email, telephone, category, county from useracc";
 #$result = mysqli_query($db,$sel_query);
 
