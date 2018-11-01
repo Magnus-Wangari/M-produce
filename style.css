@@ -102,13 +102,10 @@ a{
 }
 
 body{
-    background-image: url("image/m5.jpg");
     height: auto;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #ccc;
-    margin:0px auto;
+    background: #ccc url("image/m5.jpg") no-repeat fixed;
+    margin:0 auto;
     width: auto;
 }
 
@@ -148,7 +145,7 @@ header .nav-login form input{
     float:left;
     width: 140px;
     height: 30px;
-    padding: 0px 10px;
+    padding: 0 10px;
     margin-right: 10px;
     border: none;
     background-color: #ccc;
@@ -204,7 +201,7 @@ header .nav-login a {
     height: auto;
     max-width: 100%;
     /* padding: 1px; */
-    size: 100%;
+    /*size: 100%;*/
 }
 .mpro img{
     height:150px;
@@ -227,28 +224,28 @@ header .nav-login a {
 .signup-form input{
     width: 90%;
     height: 40px;
-    padding: 0px 5%;
+    padding: 0 5%;
     margin-bottom: 15px;
-    border: none;
     background-color: #f3f3f3;
     font-family: sans-serif;
     font-size: 16px;
     color: #111;
     line-height: 40px;
     border-radius:30px;
+    border: solid limegreen;
 }
 .signup-form select {
     width: 90%;
     height: 40px;
-    padding: 0px 5%;
+    padding: 0 5%;
     margin-bottom: 15px;
-    border: none;
     background-color: #f3f3f3;
     font-family: sans-serif;
     font-size: 16px;
     color: #111;
     line-height: 40px;
     border-radius: 30px;
+    border: solid limegreen;
 }
 
 .signup-form option{
@@ -263,15 +260,13 @@ header .nav-login a {
     margin: 0 auto;
     width: 50%;
     height: 40px;
-    border: none;
     background-color: #222;
     font-family: sans-serif;
     font-size: 16px;
     color: #fff;
     cursor: pointer;
     border-radius: 30px;
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid;
 }
 
 .signup-form button:hover {
@@ -305,9 +300,7 @@ header .nav-login a {
 
     }*/
 .example6{
-    background-image:url(image/pr4.jpg);
-    background-color:gainsboro;
-    background-repeat:no-repeat;
+    background: gainsboro url(image/pr4.jpg) no-repeat;
     width: 1200px;
     height:700px;
 }
