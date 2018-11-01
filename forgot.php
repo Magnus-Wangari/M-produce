@@ -99,5 +99,3 @@ if(isset($_POST['reset'])){
 	}
 }	
 }
-
-?>
