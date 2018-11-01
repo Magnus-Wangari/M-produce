@@ -4,16 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87d67ce8-5bdc-4b52-aa6b-958cf2775aec" name="Default Changelist" comment="included the pesapal but not yet intergrated it in our project">
-      <change beforePath="$PROJECT_DIR$/.idea/M-produce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/M-produce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1d1e4b87-1c3e-4156-a407-2cc19164a4cc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1d1e4b87-1c3e-4156-a407-2cc19164a4cc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pesapal-iframe.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesapal-iframe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-cart-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-cart-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile.php" afterDir="false" />
-    </list>
+    <list default="true" id="87d67ce8-5bdc-4b52-aa6b-958cf2775aec" name="Default Changelist" comment="included the pesapal but not yet intergrated it in our project" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +65,7 @@
         <counts>
           <entry key="css" value="64" />
           <entry key="js" value="173" />
-          <entry key="php" value="4973" />
+          <entry key="php" value="4986" />
           <entry key="txt" value="74" />
         </counts>
       </usages-collector>
@@ -83,7 +74,7 @@
           <entry key="CSS" value="64" />
           <entry key="HTML" value="38" />
           <entry key="JavaScript" value="173" />
-          <entry key="PHP" value="4934" />
+          <entry key="PHP" value="4947" />
           <entry key="PLAIN_TEXT" value="74" />
           <entry key="SQL" value="1" />
         </counts>
@@ -125,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/posts.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="211" column="63" lean-forward="true" selection-start-line="211" selection-start-column="63" selection-end-line="211" selection-end-column="63" />
+              <caret line="211" column="63" selection-start-line="211" selection-start-column="63" selection-end-line="211" selection-end-column="63" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -149,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/shopping-cart-form.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="78" column="6" lean-forward="true" selection-start-line="10" selection-end-line="78" selection-end-column="6" />
+              <caret line="78" column="6" selection-start-line="10" selection-end-line="78" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -157,8 +148,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/success.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="187">
+              <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
               <folding>
                 <element signature="e#3487#3493#0#HTML" expanded="true" />
                 <element signature="e#3493#3499#0#HTML" expanded="true" />
@@ -280,8 +271,8 @@
         <option value="$PROJECT_DIR$/userprofile.php" />
         <option value="$PROJECT_DIR$/edit.php" />
         <option value="$PROJECT_DIR$/posts.php" />
-        <option value="$PROJECT_DIR$/success.php" />
         <option value="$PROJECT_DIR$/pesapal-iframe.php" />
+        <option value="$PROJECT_DIR$/success.php" />
       </list>
     </option>
   </component>
@@ -293,7 +284,7 @@
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="698" />
     <option name="y" value="17" />
     <option name="width" value="694" />
@@ -392,7 +383,7 @@
       <workItem from="1540923567658" duration="31100000" />
       <workItem from="1541008113719" duration="3126000" />
       <workItem from="1541051758099" duration="16999000" />
-      <workItem from="1541073592289" duration="20813000" />
+      <workItem from="1541073592289" duration="21461000" />
     </task>
     <task id="LOCAL-00001" summary="included the pesapal but not yet intergrated it in our project">
       <created>1540365963810</created>
@@ -405,7 +396,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135351000" />
+    <option name="totallyTimeSpent" value="135999000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -418,9 +409,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.17019667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.3547655" />
       <window_info id="Structure" order="1" sideWeight="0.50153846" side_tool="true" weight="0.15658094" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -442,7 +432,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.22768533" />
+      <window_info anchor="right" id="Database" order="3" weight="0.4747634" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49846154" visible="true" weight="0.11875945" />
@@ -752,7 +742,7 @@
     <entry file="file://$PROJECT_DIR$/shopping-cart-form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="78" column="6" lean-forward="true" selection-start-line="10" selection-end-line="78" selection-end-column="6" />
+          <caret line="78" column="6" selection-start-line="10" selection-end-line="78" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -766,7 +756,7 @@
     <entry file="file://$PROJECT_DIR$/posts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="211" column="63" lean-forward="true" selection-start-line="211" selection-start-column="63" selection-end-line="211" selection-end-column="63" />
+          <caret line="211" column="63" selection-start-line="211" selection-start-column="63" selection-end-line="211" selection-end-column="63" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -795,8 +785,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/success.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="187">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
           <folding>
             <element signature="e#3487#3493#0#HTML" expanded="true" />
             <element signature="e#3493#3499#0#HTML" expanded="true" />

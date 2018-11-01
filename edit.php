@@ -183,15 +183,16 @@ input[type=text] {
 include('session.php');
      
 // $email = $_POST[‘email’]; 
-#$query = "SELECT * from useracc where 'email'='".$_SESSION['login_user']."'"; 
-
-if(isset($_POST['email']))//&& $_POST['firstname']==1)
-    $query="Select * from useracc";
+#$query = "SELECT * from useracc where 'email'='".$_SESSION['login_user']."'";
+$query="Select * from useracc where email = '$user_check'";
 #$query = "SELECT * from useracc where 'email'='".$_SESSION['email']."'"or die(mysql_error());
-$result = mysqli_query($db, $query) or die ( mysqli_error());
-$row = mysqli_fetch_assoc($result); 
+$result = mysqli_query($db, $query) or die ( mysqli_error($db));
+$row = mysqli_fetch_assoc($result);
 
 $status = "";
+
+if(isset($_POST['email']))//&& $_POST['firstname']==1)
+
 {
     
 $firstname=$_REQUEST["firstname"];
