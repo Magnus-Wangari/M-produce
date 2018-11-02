@@ -24,3 +24,9 @@ Change the code in sendmail.ini with the following code:
 	auth_username = mproduceproject@gmail.com
 	auth_password = M-produceproject
 	force_sender = mproduceproject@gmail.com
+
+Example of user:
+Names:  Jaden Njeru
+Password: 1234
+Email: jadennjeru68@gmail.com
+Phone:0713456789

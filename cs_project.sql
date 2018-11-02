@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2018 at 09:30 AM
+-- Generation Time: Nov 02, 2018 at 07:20 AM
 -- Server version: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `adminacc` (
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -40,12 +40,24 @@ CREATE TABLE `adminacc` (
 --
 
 CREATE TABLE `orders` (
-  `postid` varchar(50) NOT NULL,
-  `cemail` varchar(50) NOT NULL,
-  `femail` varchar(50) NOT NULL,
-  `time` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `orderid` int(11) NOT NULL
+  `orderid` int(11) NOT NULL,
+  `firstname` varchar(256) NOT NULL,
+  `lastname` varchar(256) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `description` varchar(256) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `type` varchar(256) NOT NULL,
+  `Time` datetime NOT NULL,
+  `merchent_reference` varchar(256) NOT NULL,
+  `tracking_id` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`orderid`, `firstname`, `lastname`, `email`, `description`, `amount`, `type`, `Time`, `merchent_reference`, `tracking_id`) VALUES
+(39242, 'Maite', 'Livon', 'maitelivon@gmail.com', 'Produce', 900, 'MERCHANT', '0000-00-00 00:00:00', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -82,7 +94,8 @@ INSERT INTO `post` (`postid`, `email`, `productname`, `price`, `image`, `quantit
 (95, 'pronoh@gmail.com', 'Garlic', '600', 'post/garlic.jpg', '60', 'Kilifi', '2018-10-15 10:15:18'),
 (96, 'pronoh@gmail.com', 'Mangoes', '300', 'post/mangoes.jpg', '40', 'Mombasa', '2018-10-15 13:12:02'),
 (97, 'pronoh@gmail.com', 'Avocados', '400', 'post/avacados.jpeg', '50', 'Marsabit', '2018-10-15 14:56:24'),
-(98, 'pronoh@gmail.com', 'Avocados', '', 'post/avacados.jpeg', '50', 'Marsabit', '2018-10-15 14:57:58');
+(98, 'pronoh@gmail.com', 'Avocados', '', 'post/avacados.jpeg', '50', 'Marsabit', '2018-10-15 14:57:58'),
+(99, 'maitelivon@gmail.com', 'Red cabbage', '120', 'post/f3.jpg', '100', 'Kirinyaga', '2018-10-29 14:05:31');
 
 -- --------------------------------------------------------
 
@@ -91,23 +104,28 @@ INSERT INTO `post` (`postid`, `email`, `productname`, `price`, `image`, `quantit
 --
 
 CREATE TABLE `useracc` (
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
+  `firstname` varchar(256) NOT NULL,
+  `lastname` varchar(256) NOT NULL,
+  `username` varchar(256) NOT NULL,
   `dob` date NOT NULL,
-  `gender` varchar(20) NOT NULL,
+  `gender` varchar(256) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telephone` varchar(50) NOT NULL,
-  `category` varchar(20) NOT NULL,
+  `password` varchar(256) NOT NULL,
   `county` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `category` varchar(20) NOT NULL,
+  `passreset` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `useracc`
 --
 
-INSERT INTO `useracc` (`firstname`, `lastname`, `dob`, `gender`, `email`, `telephone`, `category`, `county`, `password`) VALUES
-('Monica', 'Rono', '1998-07-09', 'male', 'pronoh@gmail.com', '0788229272', 'Both', '', 'eld123');
+INSERT INTO `useracc` (`firstname`, `lastname`, `username`, `dob`, `gender`, `email`, `telephone`, `password`, `county`, `category`, `passreset`) VALUES
+('Jaden', 'Njeru', 'Njeru', '1998-09-21', 'Male', 'jadennjeru68@gmail.com', '0713456789', '$2y$10$qUet0xrerpnWUPlY.M.ubufPnkU7OkdPpqlkCMQVyGqOZJ7MSvnyu', 'Nairobi', 'Supplier', 0),
+('Magnus', 'Wangari', 'magnus', '1999-05-09', 'Female', 'magnuswangari@gmail.com', '0722334455', '$2y$10$0jJXA86FSHUc2IwbHVJIqOBKhVAJzd6l8jn5hAqbxLPyvyNxO0/Va', 'Kiambu', 'Supplier', 0),
+('Maite', 'Livon', 'Maite', '1999-03-01', 'Female', 'maitelivon@gmail.com', '0712881197', '$2y$10$z/tkDWvAlLWjJQTaNu2lfOoWJnEQlQwmo2NNi2f3Aj1ms6jDCZaOu', 'Nairobi', 'Consumer', 441773),
+('Monica', 'Rono', 'Mrono', '1998-07-09', 'male', 'pronoh@gmail.com', '0788229272', 'eld123', '', 'Both', 0);
 
 --
 -- Indexes for dumped tables
@@ -138,16 +156,10 @@ ALTER TABLE `useracc`
 --
 
 --
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `postid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- Constraints for dumped tables
